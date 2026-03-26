@@ -38,7 +38,7 @@ body{background:var(--darkest);color:var(--light);font-family:'Archivo',sans-ser
 /* ── PAGE INTRO ── */
 .page-intro{position:fixed;inset:0;background:var(--darkest);z-index:9995;display:flex;align-items:center;justify-content:center;pointer-events:none;}
 .page-intro-logo{display:flex;flex-direction:column;align-items:center;gap:14px;}
-.page-intro-mark{width:56px;height:56px;opacity:0;animation:introMark .5s .2s cubic-bezier(.22,1,.36,1) forwards;}
+.page-intro-mark{width:56px;height:56px;object-fit:contain;opacity:0;animation:introMark .5s .2s cubic-bezier(.22,1,.36,1) forwards;}
 .page-intro-name{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:.2em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:0;animation:introName .5s .45s ease forwards;}
 .page-intro-line{width:0;height:1px;background:var(--grad);animation:introLine .5s .65s ease forwards;}
 @keyframes introMark{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
@@ -51,7 +51,7 @@ body{background:var(--darkest);color:var(--light);font-family:'Archivo',sans-ser
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);background:rgba(18,18,18,.8);border-bottom:1px solid rgba(255,255,255,.05);transition:height .4s cubic-bezier(.22,1,.36,1),background .4s ease,box-shadow .4s ease;}
 nav.scrolled{height:58px;background:rgba(18,18,18,.96);box-shadow:0 1px 0 rgba(255,255,255,.04),0 8px 32px rgba(0,0,0,.4);}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
-.nav-logo-mark{width:30px;height:30px;}
+.nav-logo-mark{width:30px;height:30px;object-fit:contain;}
 .nav-logo-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:100px;padding:5px 6px;}
 .nav-links li a{display:block;color:rgba(245,242,238,.5);text-decoration:none;font-size:13px;font-weight:400;letter-spacing:.04em;padding:7px 16px;border-radius:100px;transition:color .2s ease,background .2s ease;white-space:nowrap;}
@@ -606,10 +606,7 @@ section{padding:120px 60px;}
 <!-- PAGE INTRO -->
 <div class="page-intro" id="pageIntro">
   <div class="page-intro-logo">
-    <svg class="page-intro-mark" viewBox="0 0 36 36" fill="none">
-      <defs><linearGradient id="pilg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F5A623"/><stop offset="50%" stop-color="#F07020"/><stop offset="100%" stop-color="#E8292A"/></linearGradient></defs>
-      <polygon points="18,2 28,32 22,26 18,32 14,26 8,32" fill="url(#pilg)"/>
-    </svg>
+    <img class="page-intro-mark" src="logo.png" alt="Ardency logo">
     <div class="page-intro-name">ARDENCY</div>
     <div class="page-intro-line"></div>
   </div>
@@ -685,10 +682,7 @@ section{padding:120px 60px;}
 <!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
-    <svg class="nav-logo-mark" viewBox="0 0 36 36" fill="none">
-      <defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F5A623"/><stop offset="50%" stop-color="#F07020"/><stop offset="100%" stop-color="#E8292A"/></linearGradient></defs>
-      <polygon points="18,2 28,32 22,26 18,32 14,26 8,32" fill="url(#lg1)"/>
-    </svg>
+    <img class="nav-logo-mark" src="logo.png" alt="Ardency logo">
     <span class="nav-logo-name">ARDENCY</span>
   </a>
   <ul class="nav-links" id="navLinks">
@@ -1010,7 +1004,7 @@ section{padding:120px 60px;}
   <div class="footer-top">
     <div class="footer-brand">
       <a href="#" class="nav-logo">
-        <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><defs><linearGradient id="flg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F5A623"/><stop offset="50%" stop-color="#F07020"/><stop offset="100%" stop-color="#E8292A"/></linearGradient></defs><polygon points="18,2 28,32 22,26 18,32 14,26 8,32" fill="url(#flg)"/></svg>
+        <img class="nav-logo-mark" src="logo.png" alt="Ardency logo" width="32" height="32">
         <span class="nav-logo-name">ARDENCY</span>
       </a>
       <p>Marketing that moves the needle. Built for businesses serious about growth.</p>
