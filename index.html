@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="logo.png">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ardency — Marketing That Moves</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -633,27 +634,27 @@ section{padding:120px 60px;}
       <p>Tell us about your project and we'll get back to you within one business day.</p>
       <div class="modal-form">
         <div class="form-row">
-          <div class="form-group"><label>First Name</label><input type="text" placeholder="Alex"></div>
-          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Johnson"></div>
+          <div class="form-group"><label>First Name</label><input type="text" id="field-first-name" placeholder="Alex"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" id="field-last-name" placeholder="Johnson"></div>
         </div>
-        <div class="form-group"><label>Email</label><input type="email" placeholder="alex@company.com"></div>
-        <div class="form-group"><label>Company</label><input type="text" placeholder="Your Company"></div>
+        <div class="form-group"><label>Email</label><input type="email" id="field-email" placeholder="alex@company.com"></div>
+        <div class="form-group"><label>Company</label><input type="text" id="field-company" placeholder="Your Company"></div>
         <div class="form-group">
           <label>Service You Need</label>
-          <select>
+          <select id="field-service">
             <option>Brand Strategy</option><option>Performance Marketing</option><option>Content & SEO</option>
             <option>Social Media</option><option>Web Design & Dev</option><option>Email Marketing</option><option>Full-Service Retainer</option>
           </select>
         </div>
         <div class="form-group">
           <label>Monthly Budget</label>
-          <select>
+          <select id="field-budget">
             <option value="">Select your budget...</option>
             <option>Under $500/mo</option><option>$500 – $1,000/mo</option><option>$1,000 – $2,500/mo</option>
             <option>$2,500 – $4,000/mo</option><option>$4,000 – $6,000/mo</option><option>$6,000 – $7,500/mo</option><option>$7,500+/mo</option>
           </select>
         </div>
-        <div class="form-group"><label>Tell Us About Your Goals</label><textarea placeholder="What are you trying to achieve? Where are you currently stuck?"></textarea></div>
+        <div class="form-group"><label>Tell Us About Your Goals</label><textarea id="field-message" placeholder="What are you trying to achieve? Where are you currently stuck?"></textarea></div>
         <button class="form-submit" onclick="submitForm()">Send My Project Brief →</button>
       </div>
     </div>
@@ -1146,7 +1147,28 @@ function openModal(){document.getElementById('modal').classList.add('active');do
 function closeModal(){document.getElementById('modal').classList.remove('active');document.body.style.overflow='';}
 document.getElementById('modal').addEventListener('click',function(e){if(e.target===document.getElementById('modal'))closeModal();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
-function submitForm(){document.getElementById('modal-form-wrap').style.display='none';document.getElementById('success-message').style.display='block';setTimeout(closeModal,3000);}
+emailjs.init('yXmpALstXwsbuSe5W');
+function submitForm(){
+  var btn=document.querySelector('.form-submit');
+  btn.disabled=true;btn.textContent='Sending...';
+  emailjs.send('service_mfw2a8p','template_pp9y96t',{
+    first_name:document.getElementById('field-first-name').value,
+    last_name:document.getElementById('field-last-name').value,
+    email:document.getElementById('field-email').value,
+    company:document.getElementById('field-company').value,
+    service:document.getElementById('field-service').value,
+    budget:document.getElementById('field-budget').value,
+    message:document.getElementById('field-message').value
+  }).then(function(){
+    document.getElementById('modal-form-wrap').style.display='none';
+    document.getElementById('success-message').style.display='block';
+    btn.disabled=false;btn.textContent='Send My Project Brief \u2192';
+    setTimeout(closeModal,3000);
+  },function(){
+    alert('Something went wrong, please try again.');
+    btn.disabled=false;btn.textContent='Send My Project Brief \u2192';
+  });
+}
 
 // SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
