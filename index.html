@@ -36,22 +36,29 @@ body{background:var(--darkest);color:var(--light);font-family:'Archivo',sans-ser
 .scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--grad);z-index:200;width:0%;box-shadow:0 0 8px rgba(240,112,32,0.6);}
 
 /* ── PAGE INTRO ── */
-.page-intro{position:fixed;inset:0;background:var(--darkest);z-index:9995;display:flex;align-items:center;justify-content:center;pointer-events:none;}
-.page-intro-logo{display:flex;flex-direction:column;align-items:center;gap:14px;}
-.page-intro-mark{width:120px;height:120px;object-fit:contain;opacity:0;animation:introMark .5s .2s cubic-bezier(.22,1,.36,1) forwards;}
-.page-intro-name{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:.2em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:0;animation:introName .5s .45s ease forwards;}
-.page-intro-line{width:0;height:1px;background:var(--grad);animation:introLine .5s .65s ease forwards;}
+.page-intro{position:fixed;inset:0;background:var(--darkest);z-index:9995;display:flex;align-items:center;justify-content:center;flex-direction:column;pointer-events:none;}
+.page-intro-logo{display:flex;flex-direction:column;align-items:center;gap:24px;flex:1;justify-content:center;}
+.page-intro-mark-wrap{position:relative;width:160px;height:160px;display:flex;align-items:center;justify-content:center;}
+.page-intro-mark-wrap::before{content:'';position:absolute;inset:-18px;border-radius:50%;background:conic-gradient(from 0deg,#F5A623,#F07020,#E8292A,#F07020,#F5A623);opacity:0;animation:introRingIn .6s .2s ease forwards;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 2px));mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 2px));}
+.page-intro-mark-wrap::after{content:'';position:absolute;inset:-18px;border-radius:50%;background:conic-gradient(from 0deg,#F5A623,#F07020,#E8292A,#F07020,#F5A623);opacity:0;filter:blur(16px);animation:introGlowPulse 2.4s .8s ease-in-out infinite;}
+@keyframes introRingIn{from{opacity:0;transform:scale(.7) rotate(-90deg)}to{opacity:1;transform:scale(1) rotate(0deg)}}
+@keyframes introGlowPulse{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.35;transform:scale(1.06)}}
+.page-intro-mark{width:160px;height:160px;object-fit:contain;opacity:0;position:relative;z-index:1;animation:introMark .6s .2s cubic-bezier(.22,1,.36,1) forwards;}
 @keyframes introMark{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
-@keyframes introName{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@keyframes introLine{to{width:100px}}
-.page-intro.exit{animation:introExit .7s 1.6s cubic-bezier(.22,1,.36,1) forwards;}
-@keyframes introExit{0%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(0);transform-origin:top;opacity:0}}
+.page-intro-name{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.35em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:0;animation:introName .5s .55s ease forwards;}
+@keyframes introName{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.page-intro-bar{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);width:180px;height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;opacity:0;animation:introBarIn .3s .7s ease forwards;}
+.page-intro-bar-fill{width:0;height:100%;background:linear-gradient(90deg,#F5A623,#F07020,#E8292A);border-radius:2px;animation:introBarFill 1.2s .85s cubic-bezier(.25,.46,.45,.94) forwards;}
+@keyframes introBarIn{to{opacity:1}}
+@keyframes introBarFill{to{width:100%}}
+.page-intro.exit{animation:introExit .7s 2s cubic-bezier(.22,1,.36,1) forwards;}
+@keyframes introExit{0%{opacity:1}100%{opacity:0}}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);background:rgba(18,18,18,.8);border-bottom:1px solid rgba(255,255,255,.05);transition:height .4s cubic-bezier(.22,1,.36,1),background .4s ease,box-shadow .4s ease;}
 nav.scrolled{height:58px;background:rgba(18,18,18,.96);box-shadow:0 1px 0 rgba(255,255,255,.04),0 8px 32px rgba(0,0,0,.4);}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
-.nav-logo-mark{width:40px;height:40px;object-fit:contain;}
+.nav-logo-mark{width:50px;height:50px;object-fit:contain;}
 .nav-logo-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.12em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:100px;padding:5px 6px;}
 .nav-links li a{display:block;color:rgba(245,242,238,.5);text-decoration:none;font-size:13px;font-weight:400;letter-spacing:.04em;padding:7px 16px;border-radius:100px;transition:color .2s ease,background .2s ease;white-space:nowrap;}
@@ -606,10 +613,12 @@ section{padding:120px 60px;}
 <!-- PAGE INTRO -->
 <div class="page-intro" id="pageIntro">
   <div class="page-intro-logo">
-    <img class="page-intro-mark" src="logo.png" alt="Ardency logo">
+    <div class="page-intro-mark-wrap">
+      <img class="page-intro-mark" src="logo.png" alt="Ardency logo">
+    </div>
     <div class="page-intro-name">ARDENCY</div>
-    <div class="page-intro-line"></div>
   </div>
+  <div class="page-intro-bar"><div class="page-intro-bar-fill"></div></div>
 </div>
 
 <!-- SCROLL PROGRESS -->
@@ -1023,7 +1032,7 @@ section{padding:120px 60px;}
 <script>
 // PAGE INTRO
 var intro = document.getElementById('pageIntro');
-if(intro){intro.classList.add('exit');setTimeout(function(){intro.style.display='none';},2400);}
+if(intro){intro.classList.add('exit');setTimeout(function(){intro.style.display='none';},2800);}
 
 // SCROLL PROGRESS
 var pb = document.getElementById('scrollProgress');
