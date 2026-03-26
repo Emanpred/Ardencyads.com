@@ -216,23 +216,6 @@ section{padding:120px 60px;}
 .case-name{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.04em;margin-bottom:12px;}
 .case-desc{font-size:15px;line-height:1.7;color:rgba(245,242,238,.45);max-width:420px;}
 
-/* ── TESTIMONIALS ── */
-#testimonials{background:var(--darkest);}
-.testimonials-header{margin-bottom:64px;}
-.testimonials-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:3px;align-items:stretch;}
-.testimonial-featured{background:var(--darker);border:1px solid rgba(255,255,255,.06);padding:56px 52px;position:relative;overflow:hidden;transition:border-color .4s,box-shadow .4s;}
-.testimonial-featured:hover{border-color:rgba(240,112,32,.2);box-shadow:0 32px 64px rgba(0,0,0,.3);}
-.testimonial-featured-quote{font-family:'Bebas Neue',sans-serif;font-size:200px;line-height:.7;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.12;position:absolute;top:24px;left:36px;pointer-events:none;user-select:none;}
-.testimonial-featured-text{font-size:20px;line-height:1.65;color:rgba(245,242,238,.85);font-weight:300;font-style:italic;position:relative;z-index:1;margin-bottom:40px;}
-.testimonial-featured-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
-.testimonial-featured-author{display:flex;align-items:center;gap:14px;flex:1;}
-.testimonial-result-pill{background:var(--grad);color:white;font-size:12px;font-weight:700;letter-spacing:.08em;padding:6px 16px;border-radius:2px;white-space:nowrap;}
-.testimonials-stack{display:flex;flex-direction:column;gap:3px;}
-.testimonial-card{background:var(--darker);padding:36px;position:relative;border:1px solid rgba(255,255,255,.04);flex:1;transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .35s,box-shadow .35s;}
-.testimonial-card:hover{transform:translateX(-4px);border-color:rgba(240,112,32,.15);box-shadow:0 24px 48px rgba(0,0,0,.25);}
-.testimonial-card::before{content:'"';position:absolute;top:16px;right:24px;font-family:'Bebas Neue',sans-serif;font-size:60px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.15;line-height:1;}
-.testimonial-text{font-size:15px;line-height:1.7;color:rgba(245,242,238,.65);margin-bottom:24px;font-style:italic;}
-.testimonial-author{display:flex;align-items:center;gap:12px;}
 .stars{display:flex;gap:3px;margin-bottom:16px;}
 .star{width:14px;height:14px;background:var(--grad);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
 .author-avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:16px;color:white;flex-shrink:0;}
@@ -485,7 +468,7 @@ section{padding:120px 60px;}
   .services-header,.results-header{flex-direction:column;align-items:flex-start;gap:16px;}
   .services-grid,.industries-grid{grid-template-columns:1fr;}
   .process-split,.about-inner,.faq-inner{grid-template-columns:1fr;gap:48px;}
-  .case-studies,.testimonials-layout{grid-template-columns:1fr;}
+  .case-studies{grid-template-columns:1fr;}
   .features-grid{grid-template-columns:1fr;}
   .pricing-card-inner{padding:32px 24px 36px;}
   .budget-top-row{grid-template-columns:1fr;gap:16px;}
@@ -533,12 +516,6 @@ section{padding:120px 60px;}
   .case-mini{padding:24px 20px;}
   .case-metric{font-size:52px!important;}
 
-  /* Testimonials */
-  .testimonial-featured{padding:28px 20px;}
-  .testimonial-featured-text{font-size:16px;}
-  .testimonial-featured-quote{font-size:120px;}
-  .testimonial-result-pill{font-size:11px;padding:5px 12px;}
-  .testimonial-card{padding:24px 20px;}
 
   /* Stats band */
   .stats-band{padding:40px 20px;}
@@ -742,7 +719,7 @@ section{padding:120px 60px;}
   <div class="hero-stats">
     <div class="stat-item"><div class="stat-num" id="s1">3.8×</div><div class="stat-label">Avg. ROAS Delivered</div></div>
     <div class="stat-item"><div class="stat-num" id="s2">47+</div><div class="stat-label">Brands Scaled</div></div>
-    <div class="stat-item"><div class="stat-num" id="s3">$12M</div><div class="stat-label">Revenue Generated</div></div>
+    <div class="stat-item"><div class="stat-num" id="s3">$80K+</div><div class="stat-label">Monthly Revenue</div></div>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div>Scroll to explore</div>
 </section>
@@ -854,36 +831,6 @@ section{padding:120px 60px;}
 
 <div class="section-divider"></div>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="testimonials-header reveal">
-    <div class="section-label">Client Voices</div>
-    <h2 class="section-title">Don't take our<br>word for it.</h2>
-  </div>
-  <div class="testimonials-layout">
-    <div class="testimonial-featured reveal">
-      <div class="testimonial-featured-quote">"</div>
-      <p class="testimonial-featured-text">Ardency is the first agency that actually understood our business before pitching solutions. Their paid strategy alone added $80K in monthly revenue. Completely transformed our growth trajectory.</p>
-      <div class="testimonial-featured-meta">
-        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <div class="testimonial-featured-author"><div class="author-avatar">MR</div><div><div class="author-name">Marcus Reid</div><div class="author-role">CEO, Revive Nutrition</div></div></div>
-        <div class="testimonial-result-pill">+$80K/mo revenue</div>
-      </div>
-    </div>
-    <div class="testimonials-stack">
-      <div class="testimonial-card reveal reveal-delay-1">
-        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <p class="testimonial-text">"We'd tried two other agencies before Ardency. The difference was night and day — transparent, fast, and held accountable to results. Renewed for year two without hesitation."</p>
-        <div class="testimonial-author"><div class="author-avatar">SC</div><div><div class="author-name">Sara Chen</div><div class="author-role">Founder, Bloom Skincare</div></div></div>
-      </div>
-      <div class="testimonial-card reveal reveal-delay-2">
-        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-        <p class="testimonial-text">"Our SEO was essentially zero when we started. Within 5 months, ranking #1 for three major keywords. Ardency's content team is genuinely exceptional."</p>
-        <div class="testimonial-author"><div class="author-avatar">JP</div><div><div class="author-name">Jordan Park</div><div class="author-role">Head of Growth, Launchpad SaaS</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- STATS BAND -->
 <div class="stats-band">
@@ -892,7 +839,7 @@ section{padding:120px 60px;}
     <div class="stats-band-divider"></div>
     <div class="stats-band-item reveal reveal-delay-1"><div class="stats-band-num" data-target="3.8" data-suffix="×" data-float="true">0×</div><div class="stats-band-label">Average ROAS</div></div>
     <div class="stats-band-divider"></div>
-    <div class="stats-band-item reveal reveal-delay-2"><div class="stats-band-num" data-prefix="$" data-target="12" data-suffix="M+">$0M+</div><div class="stats-band-label">Revenue Generated</div></div>
+    <div class="stats-band-item reveal reveal-delay-2"><div class="stats-band-num" data-prefix="$" data-target="80" data-suffix="K+">$0K+</div><div class="stats-band-label">Monthly Revenue</div></div>
     <div class="stats-band-divider"></div>
     <div class="stats-band-item reveal reveal-delay-3"><div class="stats-band-num" data-target="94" data-suffix="%">0%</div><div class="stats-band-label">Client Retention Rate</div></div>
   </div>
@@ -1111,7 +1058,7 @@ document.querySelectorAll('.glow-card').forEach(function(card){
 });
 
 // 3D TILT
-document.querySelectorAll('.case-card,.testimonial-featured').forEach(function(card){
+document.querySelectorAll('.case-card').forEach(function(card){
   card.addEventListener('mousemove',function(e){var r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform='perspective(800px) rotateY('+(x*6)+'deg) rotateX('+(-y*4)+'deg) translateZ(8px)';card.style.transition='transform .1s ease';});
   card.addEventListener('mouseleave',function(){card.style.transform='';card.style.transition='transform .6s cubic-bezier(.22,1,.36,1)';});
 });
