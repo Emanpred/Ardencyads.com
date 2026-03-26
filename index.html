@@ -589,6 +589,19 @@ section{padding:120px 60px;}
   .pacc-title{font-size:16px;}
   .case-metric{font-size:42px!important;}
 }
+
+/* ── EXIT INTENT POPUP ── */
+.exit-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:10000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s ease;}
+.exit-popup-overlay.active{opacity:1;pointer-events:all;}
+.exit-popup{position:relative;max-width:480px;width:90%;padding:52px 44px;background:rgba(255,255,255,.04);backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);border:1px solid rgba(255,255,255,.08);border-radius:20px;box-shadow:0 8px 60px rgba(0,0,0,.5),0 0 80px rgba(240,112,32,.06);text-align:center;transform:translateY(24px) scale(.96);opacity:0;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease;}
+.exit-popup-overlay.active .exit-popup{transform:translateY(0) scale(1);opacity:1;}
+.exit-popup-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(245,242,238,.5);font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s,border-color .2s;}
+.exit-popup-close:hover{background:rgba(255,255,255,.08);color:var(--light);border-color:rgba(255,255,255,.15);}
+.exit-popup h3{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.06em;line-height:1.1;margin-bottom:14px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.exit-popup p{font-size:16px;line-height:1.65;color:rgba(245,242,238,.55);margin-bottom:36px;}
+.exit-popup-cta{display:block;width:100%;height:60px;border:none;border-radius:10px;background:linear-gradient(135deg,#F5A623,#F07020,#E8292A);color:#fff;font-size:17px;font-weight:600;letter-spacing:.03em;cursor:pointer;transition:box-shadow .3s ease,transform .15s ease;}
+.exit-popup-cta:hover{box-shadow:0 0 24px rgba(240,112,32,.5),0 0 60px rgba(240,112,32,.2);transform:translateY(-2px);}
+.exit-popup-cta:active{transform:translateY(0);}
 </style>
 </head>
 <body>
@@ -1093,20 +1106,28 @@ document.querySelectorAll('.scramble-title').forEach(function(el){scrObs.observe
 
 // STATS BAND COUNTERS
 function animCount(el,target,pre,suf,isFloat,dur){
-  var start=performance.now();
-  (function step(now){
+  var start=null;
+  function step(now){
+    if(!start)start=now;
     var p=Math.min((now-start)/dur,1),ease=1-Math.pow(1-p,3),val=isFloat?(target*ease).toFixed(1):Math.floor(target*ease);
     el.textContent=(pre||'')+val+(suf||'');
     if(p<1)requestAnimationFrame(step);
-  })(start);
+  }
+  requestAnimationFrame(step);
+}
+function runBandCounters(){
+  var nums=document.querySelectorAll('.stats-band-num[data-target]');
+  nums.forEach(function(el){
+    if(el.dataset.counted)return;
+    el.dataset.counted='1';
+    animCount(el,parseFloat(el.dataset.target),el.dataset.prefix||'',el.dataset.suffix||'',el.dataset.float==='true',1600);
+  });
 }
 var bandObs=new IntersectionObserver(function(entries){entries.forEach(function(e){
   if(!e.isIntersecting)return;
-  e.target.querySelectorAll('.stats-band-num').forEach(function(el){
-    animCount(el,parseFloat(el.dataset.target),el.dataset.prefix||'',el.dataset.suffix||'',el.dataset.float==='true',1600);
-  });
+  runBandCounters();
   bandObs.unobserve(e.target);
-});},{threshold:.4});
+});},{threshold:.2});
 var sb=document.querySelector('.stats-band');if(sb)bandObs.observe(sb);
 
 // ACCORDION
@@ -1227,5 +1248,52 @@ updateSlider(false);setTimeout(function(){renderFeatures(sliderToBudget(parseInt
   obs.observe(canvas.parentElement);
 })();
 </script>
+<!-- EXIT INTENT POPUP -->
+<div class="exit-popup-overlay" id="exitPopup">
+  <div class="exit-popup">
+    <button class="exit-popup-close" id="exitPopupClose">&times;</button>
+    <h3>Wait — Before You Go!</h3>
+    <p>Get a free 30-minute strategy audit, no strings attached.</p>
+    <button class="exit-popup-cta" id="exitPopupCta">Claim My Free Audit &rarr;</button>
+  </div>
+</div>
+<script>
+(function(){
+  var shown=false;
+  function showExitPopup(){
+    if(shown||sessionStorage.getItem('exitPopupShown'))return;
+    shown=true;
+    sessionStorage.setItem('exitPopupShown','1');
+    document.getElementById('exitPopup').classList.add('active');
+  }
+  document.addEventListener('mouseout',function(e){
+    if(!e.relatedTarget&&e.clientY<5)showExitPopup();
+  });
+  document.getElementById('exitPopupClose').addEventListener('click',function(){
+    document.getElementById('exitPopup').classList.remove('active');
+  });
+  document.getElementById('exitPopup').addEventListener('click',function(e){
+    if(e.target===this)this.classList.remove('active');
+  });
+  document.getElementById('exitPopupCta').addEventListener('click',function(){
+    document.getElementById('exitPopup').classList.remove('active');
+    openModal();
+  });
+})();
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/69c4cb9f92329d1c3229bf81/1jkkbmq8f';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>
