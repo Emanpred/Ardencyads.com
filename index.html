@@ -183,6 +183,17 @@ section{padding:120px 60px;}
 .service-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--fire-orange);text-decoration:none;letter-spacing:.05em;transition:gap .2s;}
 .service-link:hover{gap:12px;}
 
+/* ── SERVICES CAROUSEL (mobile) ── */
+.services-dots{display:none;justify-content:center;gap:8px;padding:28px 0 0;}
+.services-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12);border:none;cursor:pointer;transition:background .3s,transform .3s;padding:0;}
+.services-dot.active{background:var(--fire-orange);transform:scale(1.25);}
+@media(max-width:900px){
+  .services-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:0;scrollbar-width:none;scroll-behavior:smooth;}
+  .services-grid::-webkit-scrollbar{display:none;}
+  .services-grid .service-card{min-width:100%;scroll-snap-align:center;flex-shrink:0;}
+  .services-dots{display:flex;}
+}
+
 /* ── PROCESS ── */
 #process{background:var(--darkest);padding:120px 60px;position:relative;overflow:hidden;}
 #process::before{content:'';position:absolute;bottom:-200px;left:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(240,112,32,.05) 0%,transparent 70%);pointer-events:none;}
@@ -509,7 +520,7 @@ section{padding:120px 60px;}
   section{padding:72px 24px;}
   #process,#about,#faq{padding:72px 24px;}#pricing{padding:72px 24px 120px;}
   .services-header,.results-header{flex-direction:column;align-items:flex-start;gap:16px;}
-  .services-grid,.industries-grid{grid-template-columns:1fr;}
+  .industries-grid{grid-template-columns:1fr;}
   .process-split,.about-inner,.faq-inner{grid-template-columns:1fr;gap:48px;}
   .case-studies{grid-template-columns:1fr;}
   .features-grid{grid-template-columns:1fr;}
@@ -818,6 +829,14 @@ section{padding:120px 60px;}
     <div class="service-card glow-card reveal"><div class="service-num">04</div><svg class="service-icon" viewBox="0 0 44 44" fill="none"><rect x="4" y="10" width="36" height="26" rx="3" stroke="url(#sg4)" stroke-width="2"/><path d="M4 18h36M14 10V8a2 2 0 014 0v2M26 10V8a2 2 0 014 0v2" stroke="url(#sg4)" stroke-width="2" stroke-linecap="round"/><defs><linearGradient id="sg4" x1="4" y1="8" x2="40" y2="36"><stop stop-color="#F5A623"/><stop offset="1" stop-color="#E8292A"/></linearGradient></defs></svg><h3 class="service-name">Email Marketing</h3><p class="service-desc">Sequences, campaigns, and automations that nurture leads and retain customers. Email is still the highest-ROI channel.</p><a href="#" class="service-link" onclick="openCal();return false;">Start a project →</a></div>
     <div class="service-card glow-card reveal reveal-delay-1"><div class="service-num">05</div><svg class="service-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="16" stroke="url(#sg5)" stroke-width="2"/><circle cx="22" cy="22" r="6" stroke="url(#sg5)" stroke-width="2"/><defs><linearGradient id="sg5" x1="6" y1="6" x2="38" y2="38"><stop stop-color="#F5A623"/><stop offset="1" stop-color="#E8292A"/></linearGradient></defs></svg><h3 class="service-name">Social Media</h3><p class="service-desc">Strategy, creative direction, and community management. We build followings that actually buy.</p><a href="#" class="service-link" onclick="openCal();return false;">Start a project →</a></div>
     <div class="service-card glow-card reveal reveal-delay-2"><div class="service-num">06</div><svg class="service-icon" viewBox="0 0 44 44" fill="none"><rect x="4" y="6" width="36" height="26" rx="3" stroke="url(#sg6)" stroke-width="2"/><path d="M14 38h16M22 32v6M12 20l6 6 14-14" stroke="url(#sg6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="sg6" x1="4" y1="6" x2="40" y2="38"><stop stop-color="#F5A623"/><stop offset="1" stop-color="#E8292A"/></linearGradient></defs></svg><h3 class="service-name">Web Design & CRO</h3><p class="service-desc">Websites and landing pages built to convert, not just impress. Every pixel is in service of the sale.</p><a href="#" class="service-link" onclick="openCal();return false;">Start a project →</a></div>
+  </div>
+  <div class="services-dots" id="servicesDots">
+    <button class="services-dot active" data-index="0"></button>
+    <button class="services-dot" data-index="1"></button>
+    <button class="services-dot" data-index="2"></button>
+    <button class="services-dot" data-index="3"></button>
+    <button class="services-dot" data-index="4"></button>
+    <button class="services-dot" data-index="5"></button>
   </div>
 </section>
 
@@ -1375,6 +1394,28 @@ updateSlider(false);setTimeout(function(){renderFeatures(sliderToBudget(parseInt
   document.getElementById('exitPopupCta').addEventListener('click',function(){
     document.getElementById('exitPopup').classList.remove('active');
     openCal();
+  });
+})();
+</script>
+
+<script>
+// Services carousel dots
+(function(){
+  var grid=document.querySelector('.services-grid');
+  var dots=document.querySelectorAll('.services-dot');
+  if(!grid||!dots.length)return;
+  function updateDots(){
+    var scrollLeft=grid.scrollLeft,cardWidth=grid.children[0].offsetWidth;
+    var idx=Math.round(scrollLeft/cardWidth);
+    dots.forEach(function(d,i){d.classList.toggle('active',i===idx);});
+  }
+  grid.addEventListener('scroll',updateDots,{passive:true});
+  dots.forEach(function(dot){
+    dot.addEventListener('click',function(){
+      var idx=parseInt(this.dataset.index);
+      var cardWidth=grid.children[0].offsetWidth;
+      grid.scrollTo({left:idx*cardWidth,behavior:'smooth'});
+    });
   });
 })();
 </script>
