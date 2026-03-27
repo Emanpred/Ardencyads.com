@@ -315,6 +315,7 @@ section{padding:120px 60px;}
 .locked-hint-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(240,112,32,.15),transparent);animation:hintLinePulse 3s ease-in-out infinite;}
 @keyframes hintLinePulse{0%,100%{opacity:.6}50%{opacity:1}}
 .locked-hint span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,242,238,.12);white-space:nowrap;}
+.locked-hint-mobile{display:none;grid-column:1/-1;align-items:center;justify-content:center;gap:6px;padding:12px 0 4px;font-size:12px;color:rgba(240,112,32,.45);letter-spacing:.04em;}
 /* Footer */
 .pricing-card-footer{display:flex;flex-direction:column;align-items:stretch;gap:16px;border-top:1px solid rgba(255,255,255,.05);padding-top:36px;}
 #pricingCta{width:100%;height:58px;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--grad);border:none;border-radius:10px;color:#fff;font-family:'Bebas Neue',sans-serif;font-size:15px;font-weight:400;letter-spacing:.1em;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;transition:box-shadow .35s ease,transform .2s ease;}
@@ -515,7 +516,14 @@ section{padding:120px 60px;}
   .case-studies{grid-template-columns:1fr;}
   .case-metric{font-size:56px!important;}
   .features-grid{grid-template-columns:1fr;}
-  .pricing-card-inner{padding:32px 28px 32px;}
+  .feature-row{padding:8px 8px;gap:10px;}
+  .feature-text{font-size:13px;}
+  .feature-check{width:18px;height:18px;}
+  .feature-row.locked{display:none;}
+  .locked-hint{display:none;}
+  .locked-hint-mobile{display:flex;}
+  .pricing-card-inner{padding:20px;}
+  .budget-amount{font-size:52px;}
   .budget-top-row{flex-direction:column;gap:16px;}
   .footer-statement{padding:40px 24px;}
   .footer-statement-inner{flex-direction:column;align-items:flex-start;gap:32px;}
@@ -1260,14 +1268,15 @@ function renderFeatures(budget){
   tooLow.classList.remove('show');featWrap.style.display='block';card.classList.add('hot');tierBadge.style.opacity='1';
   if(topBar)topBar.style.width=Math.round(((budget-500)/(7500-500))*100)+'%';
   grid.innerHTML='';
-  var visible=ALL_FEATURES.filter(function(f){return f.min<=budget;}),locked=ALL_FEATURES.filter(function(f){return f.min>budget;}).slice(0,4);
+  var visible=ALL_FEATURES.filter(function(f){return f.min<=budget;}),allLocked=ALL_FEATURES.filter(function(f){return f.min>budget;}),locked=allLocked.slice(0,4);
   visible.forEach(function(f,i){
     var row=document.createElement('div');row.className='feature-row';row.style.transitionDelay=Math.min(i*40,500)+'ms';
     var tagHtml=f.tag?'<span class="feature-tag '+f.tag+'">'+(f.tag==='new'?'Included':'Pro')+'</span>':'';
     row.innerHTML='<div class="feature-check"><svg viewBox="0 0 12 12" fill="none"><path d="M1.5 6l3 3 5-5" stroke="rgba(240,112,32,.7)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feature-text">'+f.text+'</span>'+tagHtml;
     grid.appendChild(row);requestAnimationFrame(function(){requestAnimationFrame(function(){row.classList.add('visible');});});
   });
-  if(locked.length>0){
+  if(allLocked.length>0){
+    // Desktop: blurred locked rows
     var div=document.createElement('div');div.className='locked-hint';div.innerHTML='<div class="locked-hint-line"></div><span>Unlock by increasing budget</span><div class="locked-hint-line"></div>';div.style.opacity='0';div.style.transition='opacity .4s ease';div.style.transitionDelay=(visible.length*40+120)+'ms';grid.appendChild(div);requestAnimationFrame(function(){requestAnimationFrame(function(){div.style.opacity='1';});});
     locked.forEach(function(f){
       var row=document.createElement('div');row.className='feature-row locked';
@@ -1275,6 +1284,8 @@ function renderFeatures(budget){
       row.innerHTML='<div class="feature-check"><svg viewBox="0 0 12 12" fill="none"><path d="M1.5 6l3 3 5-5" stroke="rgba(240,112,32,.7)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feature-text">'+f.text+'</span>'+tagHtml;
       grid.appendChild(row);
     });
+    // Mobile: compact text hint
+    var mHint=document.createElement('div');mHint.className='locked-hint-mobile';mHint.textContent='Unlock '+allLocked.length+' more feature'+(allLocked.length>1?'s':'')+' by increasing your budget';mHint.style.opacity='0';mHint.style.transition='opacity .4s ease';mHint.style.transitionDelay=(visible.length*40+120)+'ms';grid.appendChild(mHint);requestAnimationFrame(function(){requestAnimationFrame(function(){mHint.style.opacity='1';});});
   }
 }
 // Spawn floating particles
