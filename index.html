@@ -183,17 +183,6 @@ section{padding:120px 60px;}
 .service-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--fire-orange);text-decoration:none;letter-spacing:.05em;transition:gap .2s;}
 .service-link:hover{gap:12px;}
 
-/* ── SERVICES CAROUSEL (mobile) ── */
-.services-dots{display:none;justify-content:center;gap:8px;padding:28px 0 0;}
-.services-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12);border:none;cursor:pointer;transition:background .3s,transform .3s;padding:0;}
-.services-dot.active{background:var(--fire-orange);transform:scale(1.25);}
-@media(max-width:900px){
-  .services-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:0;scrollbar-width:none;scroll-behavior:smooth;}
-  .services-grid::-webkit-scrollbar{display:none;}
-  .services-grid .service-card{min-width:100%;scroll-snap-align:center;flex-shrink:0;}
-  .services-dots{display:flex;}
-}
-
 /* ── PROCESS ── */
 #process{background:var(--darkest);padding:120px 60px;position:relative;overflow:hidden;}
 #process::before{content:'';position:absolute;bottom:-200px;left:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(240,112,32,.05) 0%,transparent 70%);pointer-events:none;}
@@ -513,28 +502,30 @@ section{padding:120px 60px;}
   nav{padding:0 20px;height:60px;}
   .nav-links{display:none;}
   .hamburger{display:flex;}
-  .hero{padding:100px 24px 72px;}
+  .hero{padding:100px 24px 60px;}
   .hero-stats,.hero-scroll{display:none;}
   .hero-sub{font-size:16px;}
   .hero-actions{flex-direction:column;align-items:flex-start;gap:16px;}
-  section{padding:72px 24px;}
-  #process,#about,#faq{padding:72px 24px;}#pricing{padding:72px 24px 120px;}
+  section{padding:40px 24px;}
+  #process,#about,#faq{padding:40px 24px;}#pricing{padding:40px 24px 80px;}
   .services-header,.results-header{flex-direction:column;align-items:flex-start;gap:16px;}
-  .industries-grid{grid-template-columns:1fr;}
-  .process-split,.about-inner,.faq-inner{grid-template-columns:1fr;gap:48px;}
+  .services-grid{grid-template-columns:1fr 1fr;gap:2px;}
+  .industries-grid{grid-template-columns:1fr 1fr;}
+  .process-split,.about-inner,.faq-inner{grid-template-columns:1fr;gap:40px;}
   .case-studies{grid-template-columns:1fr;}
+  .case-metric{font-size:56px!important;}
   .features-grid{grid-template-columns:1fr;}
   .pricing-card-inner{padding:32px 28px 32px;}
-  .budget-top-row{grid-template-columns:1fr;gap:16px;}
-  .footer-statement{padding:60px 24px;}
+  .budget-top-row{flex-direction:column;gap:16px;}
+  .footer-statement{padding:40px 24px;}
   .footer-statement-inner{flex-direction:column;align-items:flex-start;gap:32px;}
-  .footer-main{padding:48px 24px 32px;}
-  .footer-top{grid-template-columns:1fr 1fr;gap:32px;}
+  .footer-main{padding:40px 24px 32px;}
+  .footer-top{grid-template-columns:1fr;gap:36px;}
   .modal{padding:32px 24px;margin:16px;width:calc(100% - 32px);max-width:none;}
   .form-row{grid-template-columns:1fr;}
-  #cta{padding:80px 24px;}
+  #cta{padding:60px 24px;}
   .cta-form{flex-direction:column;}
-  .stats-band{padding:48px 24px;}
+  .stats-band{padding:40px 24px;}
   .stats-band-inner{grid-template-columns:1fr 1fr;gap:32px;}
   .stats-band-divider{display:none;}
   .team-grid{grid-template-columns:1fr 1fr;}
@@ -551,12 +542,14 @@ section{padding:120px 60px;}
   .btn-ghost{font-size:14px;}
 
   /* Sections */
-  section{padding:60px 20px;}
-  #process,#about,#faq,#pricing,#industries{padding:60px 20px;}
+  section{padding:36px 16px;}
+  #process,#about,#faq,#pricing,#industries{padding:36px 16px;}
 
   /* Services */
-  .service-card{padding:28px 20px;}
-  .service-name{font-size:22px;}
+  .services-grid{grid-template-columns:1fr 1fr;gap:2px;}
+  .service-card{padding:24px 16px;}
+  .service-name{font-size:20px;}
+  .service-desc{font-size:13px;margin-bottom:20px;}
 
   /* Process */
   .process-intro{max-width:100%;}
@@ -568,7 +561,7 @@ section{padding:120px 60px;}
   /* Results */
   .case-card{padding:28px 20px;}
   .case-mini{padding:24px 20px;}
-  .case-metric{font-size:52px!important;}
+  .case-metric{font-size:48px!important;}
 
 
   /* Stats band */
@@ -578,16 +571,16 @@ section{padding:120px 60px;}
   .stats-band-label{font-size:11px;}
 
   /* Pricing */
-  #pricing{padding:60px 20px 100px;}
-  .budget-amount{font-size:56px;}
-  .budget-dollar{font-size:24px;}
-  .pricing-card-inner{padding:32px 24px 32px;}
+  #pricing{padding:36px 16px 80px;}
+  .budget-amount{font-size:52px;}
+  .budget-dollar{font-size:22px;}
+  .pricing-card-inner{padding:28px 20px 28px;}
   .features-grid{grid-template-columns:1fr;}
   .tier-badge{font-size:15px;padding:8px 14px;}
   .pricing-header h2{font-size:clamp(36px,9vw,56px);}
 
   /* About */
-  #about{padding:60px 20px;}
+  #about{padding:36px 16px;}
   .team-grid{grid-template-columns:1fr;}
   .team-card{padding:20px 16px;}
 
@@ -595,24 +588,23 @@ section{padding:120px 60px;}
   .industry-card{padding:28px 20px;}
 
   /* FAQ */
-  #faq{padding:60px 20px;}
+  #faq{padding:36px 16px;}
   .faq-q{font-size:15px;padding:18px 0;}
 
   /* CTA */
-  #cta{padding:60px 20px;}
+  #cta{padding:40px 16px;}
   .cta-title{font-size:clamp(44px,11vw,72px);}
   .cta-sub{font-size:15px;}
   .cta-form{flex-direction:column;}
 
   /* Footer statement */
-  .footer-statement{padding:48px 20px;}
+  .footer-statement{padding:36px 16px;}
   .footer-statement-word{font-size:clamp(48px,11vw,72px);}
   .footer-statement-cta{width:100%;text-align:center;justify-content:center;}
   .footer-statement-text{gap:12px;}
 
   /* Footer main */
-  .footer-main{padding:40px 20px 28px;}
-  .footer-top{grid-template-columns:1fr 1fr;gap:24px;}
+  .footer-main{padding:36px 16px 28px;}
   .footer-top{grid-template-columns:1fr;gap:32px;}
   .footer-bottom{flex-direction:column;align-items:flex-start;gap:16px;}
 
@@ -829,14 +821,6 @@ section{padding:120px 60px;}
     <div class="service-card glow-card reveal"><div class="service-num">04</div><svg class="service-icon" viewBox="0 0 44 44" fill="none"><rect x="4" y="10" width="36" height="26" rx="3" stroke="url(#sg4)" stroke-width="2"/><path d="M4 18h36M14 10V8a2 2 0 014 0v2M26 10V8a2 2 0 014 0v2" stroke="url(#sg4)" stroke-width="2" stroke-linecap="round"/><defs><linearGradient id="sg4" x1="4" y1="8" x2="40" y2="36"><stop stop-color="#F5A623"/><stop offset="1" stop-color="#E8292A"/></linearGradient></defs></svg><h3 class="service-name">Email Marketing</h3><p class="service-desc">Sequences, campaigns, and automations that nurture leads and retain customers. Email is still the highest-ROI channel.</p><a href="#" class="service-link" onclick="openCal();return false;">Start a project →</a></div>
     <div class="service-card glow-card reveal reveal-delay-1"><div class="service-num">05</div><svg class="service-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="16" stroke="url(#sg5)" stroke-width="2"/><circle cx="22" cy="22" r="6" stroke="url(#sg5)" stroke-width="2"/><defs><linearGradient id="sg5" x1="6" y1="6" x2="38" y2="38"><stop stop-color="#F5A623"/><stop offset="1" stop-color="#E8292A"/></linearGradient></defs></svg><h3 class="service-name">Social Media</h3><p class="service-desc">Strategy, creative direction, and community management. We build followings that actually buy.</p><a href="#" class="service-link" onclick="openCal();return false;">Start a project →</a></div>
     <div class="service-card glow-card reveal reveal-delay-2"><div class="service-num">06</div><svg class="service-icon" viewBox="0 0 44 44" fill="none"><rect x="4" y="6" width="36" height="26" rx="3" stroke="url(#sg6)" stroke-width="2"/><path d="M14 38h16M22 32v6M12 20l6 6 14-14" stroke="url(#sg6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="sg6" x1="4" y1="6" x2="40" y2="38"><stop stop-color="#F5A623"/><stop offset="1" stop-color="#E8292A"/></linearGradient></defs></svg><h3 class="service-name">Web Design & CRO</h3><p class="service-desc">Websites and landing pages built to convert, not just impress. Every pixel is in service of the sale.</p><a href="#" class="service-link" onclick="openCal();return false;">Start a project →</a></div>
-  </div>
-  <div class="services-dots" id="servicesDots">
-    <button class="services-dot active" data-index="0"></button>
-    <button class="services-dot" data-index="1"></button>
-    <button class="services-dot" data-index="2"></button>
-    <button class="services-dot" data-index="3"></button>
-    <button class="services-dot" data-index="4"></button>
-    <button class="services-dot" data-index="5"></button>
   </div>
 </section>
 
@@ -1394,28 +1378,6 @@ updateSlider(false);setTimeout(function(){renderFeatures(sliderToBudget(parseInt
   document.getElementById('exitPopupCta').addEventListener('click',function(){
     document.getElementById('exitPopup').classList.remove('active');
     openCal();
-  });
-})();
-</script>
-
-<script>
-// Services carousel dots
-(function(){
-  var grid=document.querySelector('.services-grid');
-  var dots=document.querySelectorAll('.services-dot');
-  if(!grid||!dots.length)return;
-  function updateDots(){
-    var scrollLeft=grid.scrollLeft,cardWidth=grid.children[0].offsetWidth;
-    var idx=Math.round(scrollLeft/cardWidth);
-    dots.forEach(function(d,i){d.classList.toggle('active',i===idx);});
-  }
-  grid.addEventListener('scroll',updateDots,{passive:true});
-  dots.forEach(function(dot){
-    dot.addEventListener('click',function(){
-      var idx=parseInt(this.dataset.index);
-      var cardWidth=grid.children[0].offsetWidth;
-      grid.scrollTo({left:idx*cardWidth,behavior:'smooth'});
-    });
   });
 })();
 </script>
