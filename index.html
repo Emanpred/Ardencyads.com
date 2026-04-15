@@ -329,6 +329,32 @@ section{padding:120px 60px;}
 .budget-too-low h3{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.06em;margin-bottom:12px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.3;}
 .budget-too-low p{font-size:15px;color:rgba(245,242,238,.2);line-height:1.7;}
 
+/* ── RESTAURANT WEBSITES ── */
+#restaurant-sites{background:var(--darkest);padding:120px 60px;position:relative;overflow:hidden;}
+.resto-wrap{max-width:580px;margin:0 auto;}
+.resto-header{text-align:center;margin-bottom:56px;}
+.resto-header p{margin-top:16px;color:rgba(245,242,238,.45);font-size:16px;line-height:1.7;max-width:480px;margin-left:auto;margin-right:auto;}
+.resto-card{background:rgba(255,255,255,.025);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid transparent;border-radius:20px;position:relative;overflow:hidden;}
+.resto-card::before{content:'';position:absolute;inset:-1px;border-radius:21px;padding:1px;background:linear-gradient(160deg,rgba(245,166,35,.2),rgba(240,112,32,.08) 50%,rgba(232,41,42,.2));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:1;}
+.resto-card-bar{height:3px;background:rgba(255,255,255,.03);position:relative;overflow:hidden;border-radius:20px 20px 0 0;}
+.resto-card-bar-fill{position:absolute;inset:0;background:linear-gradient(90deg,#F5A623,#F07020,#E8292A);}
+.resto-card-inner{padding:48px 44px;}
+.resto-plan-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:36px;}
+.resto-plan-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.1em;color:var(--fire-orange);}
+.resto-price{display:flex;align-items:baseline;gap:3px;}
+.resto-price-amount{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:.01em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.resto-price-mo{font-size:15px;color:rgba(245,242,238,.3);margin-left:2px;}
+.resto-features{display:flex;flex-direction:column;gap:14px;margin-bottom:40px;}
+.resto-feature{display:flex;align-items:center;gap:12px;}
+.resto-feature-check{width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,rgba(245,166,35,.18),rgba(232,41,42,.18));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.resto-feature-check svg{width:10px;height:10px;}
+.resto-feature-text{font-size:15px;color:rgba(245,242,238,.65);}
+.resto-cta{width:100%;height:58px;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--grad);border:none;border-radius:10px;color:#fff;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.1em;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;transition:box-shadow .35s ease,transform .2s ease;}
+.resto-cta::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:skewX(-20deg);transition:left .5s ease;}
+.resto-cta:hover{box-shadow:0 0 24px rgba(240,112,32,.4),0 0 60px rgba(240,112,32,.15);transform:translateY(-2px);}
+.resto-cta:hover::before{left:150%;}
+.resto-note{text-align:center;margin-top:16px;font-size:13px;color:rgba(245,242,238,.2);}
+
 /* ── CTA ── */
 #cta{position:relative;overflow:hidden;text-align:center;padding:160px 60px;}
 #cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(240,112,32,.1) 0%,transparent 65%);animation:floatOrb 16s ease-in-out infinite;pointer-events:none;}
@@ -533,6 +559,9 @@ section{padding:120px 60px;}
   .footer-top{grid-template-columns:1fr;gap:36px;}
   .modal{padding:32px 24px;margin:16px;width:calc(100% - 32px);max-width:none;}
   .form-row{grid-template-columns:1fr;}
+  #restaurant-sites{padding:40px 24px;}
+  .resto-card-inner{padding:32px 24px;}
+  .resto-price-amount{font-size:40px;}
   #cta{padding:60px 24px;}
   .cta-form{flex-direction:column;}
   .stats-band{padding:40px 24px;}
@@ -945,6 +974,38 @@ section{padding:120px 60px;}
           <a href="#" id="pricingCta" onclick="openCal();return false;">GET STARTED AT THIS BUDGET <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="pricing-guarantee"><svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M9 2L3 4.5v4.75C3 12.8 5.6 16.1 9 17c3.4-.9 6-4.2 6-7.75V4.5L9 2z" stroke="rgba(245,242,238,.25)" stroke-width="1.2" fill="none"/><path d="M6 9l2 2 4-4" stroke="rgba(245,242,238,.25)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>30-day money-back guarantee</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RESTAURANT WEBSITES -->
+<section id="restaurant-sites">
+  <div class="resto-wrap">
+    <div class="resto-header reveal">
+      <div class="section-label">Restaurant Websites</div>
+      <h2 class="section-title">Get your restaurant<br><span class="fire-text">online.</span></h2>
+      <p>Professional website built for your restaurant — kept live every month, no tech skills needed.</p>
+    </div>
+    <div class="resto-card reveal">
+      <div class="resto-card-bar"><div class="resto-card-bar-fill"></div></div>
+      <div class="resto-card-inner">
+        <div class="resto-plan-row">
+          <div class="resto-plan-name">Starter Plan</div>
+          <div class="resto-price"><span class="resto-price-amount">$50</span><span class="resto-price-mo">/mo</span></div>
+        </div>
+        <div class="resto-features">
+          <div class="resto-feature"><div class="resto-feature-check"><svg viewBox="0 0 12 12" fill="none"><path d="M1.5 6l3 3 5-5" stroke="var(--fire-orange)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="resto-feature-text">Professional website designed & built</span></div>
+          <div class="resto-feature"><div class="resto-feature-check"><svg viewBox="0 0 12 12" fill="none"><path d="M1.5 6l3 3 5-5" stroke="var(--fire-orange)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="resto-feature-text">Hosted & kept live every month</span></div>
+          <div class="resto-feature"><div class="resto-feature-check"><svg viewBox="0 0 12 12" fill="none"><path d="M1.5 6l3 3 5-5" stroke="var(--fire-orange)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="resto-feature-text">Menu updates included</span></div>
+          <div class="resto-feature"><div class="resto-feature-check"><svg viewBox="0 0 12 12" fill="none"><path d="M1.5 6l3 3 5-5" stroke="var(--fire-orange)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="resto-feature-text">Google Maps integration</span></div>
+          <div class="resto-feature"><div class="resto-feature-check"><svg viewBox="0 0 12 12" fill="none"><path d="M1.5 6l3 3 5-5" stroke="var(--fire-orange)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="resto-feature-text">Mobile friendly design</span></div>
+          <div class="resto-feature"><div class="resto-feature-check"><svg viewBox="0 0 12 12" fill="none"><path d="M1.5 6l3 3 5-5" stroke="var(--fire-orange)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="resto-feature-text">Cancel anytime</span></div>
+        </div>
+        <a href="#" class="resto-cta" onclick="openModal();return false;">GET STARTED — $50/MO <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="resto-note">No setup fee · Cancel anytime</div>
       </div>
     </div>
   </div>
