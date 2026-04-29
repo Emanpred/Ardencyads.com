@@ -340,6 +340,15 @@ section{padding:120px 60px;}
 .resto-card.popular{border-color:rgba(240,112,32,.3);}
 .resto-card.popular::after{content:'';position:absolute;top:0;left:10%;right:10%;height:80px;background:radial-gradient(ellipse at 50% 0%,rgba(240,112,32,.08) 0%,transparent 70%);pointer-events:none;}
 .resto-popular-badge{position:absolute;top:16px;right:16px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:100px;background:rgba(240,112,32,.12);color:var(--fire-orange);border:1px solid rgba(240,112,32,.2);z-index:2;}
+.resto-exclusive{position:relative;margin:0 -28px 24px;padding:14px 28px;background:linear-gradient(90deg,rgba(232,41,42,.08),rgba(240,112,32,.06));border-top:1px solid rgba(232,41,42,.18);border-bottom:1px solid rgba(232,41,42,.18);}
+.resto-exclusive-label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;}
+.resto-exclusive-title{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ff7070;}
+.resto-exclusive-dot{width:6px;height:6px;border-radius:50%;background:#ff5050;animation:pulseDot 1.8s ease-in-out infinite;flex-shrink:0;}
+.resto-exclusive-count{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.06em;background:linear-gradient(135deg,#F5A623,#E8292A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.resto-exclusive-bar{height:3px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;margin-bottom:6px;}
+.resto-exclusive-bar-fill{height:100%;width:60%;background:linear-gradient(90deg,#F5A623,#F07020,#E8292A);border-radius:2px;box-shadow:0 0 8px rgba(240,112,32,.4);}
+.resto-exclusive-note{font-size:11px;color:rgba(245,242,238,.4);letter-spacing:.02em;}
+.resto-exclusive-note strong{color:rgba(245,242,238,.7);font-weight:500;}
 .resto-card-bar{height:3px;background:rgba(255,255,255,.03);position:relative;overflow:hidden;border-radius:16px 16px 0 0;}
 .resto-card-bar-fill{position:absolute;inset:0;background:linear-gradient(90deg,#F5A623,#F07020,#E8292A);}
 .resto-card-inner{padding:36px 28px;}
@@ -1001,6 +1010,14 @@ section{padding:120px 60px;}
         <div class="resto-card-inner">
           <div class="resto-plan-name">Starter</div>
           <div class="resto-price"><span class="resto-price-amount">$50</span><span class="resto-price-mo">/mo</span></div>
+          <div class="resto-exclusive">
+            <div class="resto-exclusive-label">
+              <div class="resto-exclusive-title"><span class="resto-exclusive-dot"></span>Exclusive Launch Offer</div>
+              <div class="resto-exclusive-count">3/5</div>
+            </div>
+            <div class="resto-exclusive-bar"><div class="resto-exclusive-bar-fill"></div></div>
+            <div class="resto-exclusive-note">Only <strong>2 spots left</strong> at this price — first 5 clients only.</div>
+          </div>
           <div class="resto-features">
             <div class="resto-feature"><div class="resto-feature-check"><svg viewBox="0 0 12 12" fill="none"><path d="M1.5 6l3 3 5-5" stroke="var(--fire-orange)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="resto-feature-text">Custom-designed website</span></div>
             <div class="resto-feature"><div class="resto-feature-check"><svg viewBox="0 0 12 12" fill="none"><path d="M1.5 6l3 3 5-5" stroke="var(--fire-orange)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="resto-feature-text">Hosting & maintenance included</span></div>
