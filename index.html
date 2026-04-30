@@ -239,7 +239,7 @@ section{padding:120px 60px;}
 .stats-band-item{text-align:center;padding:0 24px;transition:transform .4s cubic-bezier(.22,1,.36,1);cursor:default;}
 .stats-band-item:hover{transform:translateY(-4px);}
 .stats-band-item:hover .stats-band-num{filter:drop-shadow(0 0 16px rgba(240,112,32,.5));}
-.stats-band-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,6vw,80px);line-height:1;letter-spacing:.02em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
+.stats-band-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,6vw,80px);line-height:1;letter-spacing:.02em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;font-variant-numeric:tabular-nums;font-feature-settings:"tnum";display:inline-block;will-change:contents;}
 .stats-band-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,242,238,.35);font-weight:500;}
 .stats-band-divider{width:1px;height:60px;background:rgba(255,255,255,.07);}
 
@@ -1352,6 +1352,20 @@ function animCount(el,target,pre,suf,isFloat,dur){
   }
   requestAnimationFrame(step);
 }
+// Pre-lock each counter's width to its final rendered size so the digit count change doesn't cause horizontal layout shift while animating
+function lockCounterWidths(){
+  document.querySelectorAll('.stats-band-num[data-target]').forEach(function(el){
+    var target=parseFloat(el.dataset.target),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'',isFloat=el.dataset.float==='true';
+    var finalText=pre+(isFloat?target.toFixed(1):target)+suf;
+    var orig=el.textContent;
+    el.textContent=finalText;
+    var w=el.getBoundingClientRect().width;
+    el.style.minWidth=Math.ceil(w)+'px';
+    el.textContent=orig;
+  });
+}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',lockCounterWidths);}else{lockCounterWidths();}
+window.addEventListener('resize',lockCounterWidths,{passive:true});
 function runBandCounters(){
   var nums=document.querySelectorAll('.stats-band-num[data-target]');
   nums.forEach(function(el){
