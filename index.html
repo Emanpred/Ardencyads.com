@@ -570,8 +570,8 @@ section{padding:120px 60px;}
   .hero-stats,.hero-scroll{display:none;}
   .hero-sub{font-size:16px;}
   .hero-actions{flex-direction:column;align-items:flex-start;gap:16px;}
-  section{padding:40px 24px;}
-  #process,#about,#faq{padding:40px 24px;}#pricing{padding:40px 24px 80px;}
+  section{padding:64px 24px;}
+  #process,#about,#faq{padding:64px 24px;}#pricing{padding:64px 24px 100px;}
   .services-header,.results-header{flex-direction:column;align-items:flex-start;gap:16px;}
   .services-grid{grid-template-columns:1fr 1fr;gap:2px;}
   .industries-grid{grid-template-columns:1fr 1fr;}
@@ -611,20 +611,24 @@ section{padding:120px 60px;}
 
   /* Hero */
   .hero{padding:96px 20px 60px;}
+  .hero-h1{font-size:clamp(48px,12vw,64px);line-height:1;}
   .hero-eyebrow{font-size:11px;margin-bottom:20px;}
-  .hero-sub{font-size:15px;line-height:1.65;margin-bottom:32px;}
+  .hero-sub{font-size:15px;line-height:1.7;margin-bottom:32px;}
   .btn-primary{width:100%;justify-content:center;}
   .btn-ghost{font-size:14px;}
 
-  /* Sections */
-  section{padding:36px 16px;}
-  #process,#about,#faq,#pricing,#industries{padding:36px 16px;}
+  /* Sections — generous breathing room */
+  section{padding:56px 20px;}
+  #process,#about,#faq,#industries{padding:56px 20px;}
+  #pricing{padding:56px 20px 90px;}
+  .section-title{font-size:clamp(36px,9vw,52px);line-height:1.05;}
+  .section-label{margin-bottom:14px;}
 
-  /* Services */
-  .services-grid{grid-template-columns:1fr 1fr;gap:2px;}
-  .service-card{padding:24px 16px;}
-  .service-name{font-size:20px;}
-  .service-desc{font-size:13px;margin-bottom:20px;}
+  /* Services — single column */
+  .services-grid{grid-template-columns:1fr;gap:2px;}
+  .service-card{padding:32px 24px;}
+  .service-name{font-size:22px;}
+  .service-desc{font-size:14px;line-height:1.65;margin-bottom:20px;}
 
   /* Process */
   .process-intro{max-width:100%;}
@@ -634,46 +638,50 @@ section{padding:120px 60px;}
   .pacc-deliverable{display:none;}
 
   /* Results */
-  .case-card{padding:28px 20px;}
+  .case-card{padding:32px 22px;}
   .case-mini{padding:24px 20px;}
   .case-metric{font-size:48px!important;}
 
-
   /* Stats band */
-  .stats-band{padding:40px 20px;}
-  .stats-band-inner{grid-template-columns:1fr 1fr;gap:20px;}
+  .stats-band{padding:48px 20px;}
+  .stats-band-inner{grid-template-columns:1fr 1fr;gap:28px 20px;}
   .stats-band-num{font-size:44px;}
   .stats-band-label{font-size:11px;}
 
   /* Pricing */
-  #pricing{padding:36px 16px 80px;}
   .budget-amount{font-size:52px;}
   .budget-dollar{font-size:22px;}
-  .pricing-card-inner{padding:28px 20px 28px;}
-  .features-grid{grid-template-columns:1fr 1fr;column-gap:16px;}
+  .pricing-card-inner{padding:28px 22px;}
+  .features-grid{grid-template-columns:1fr;column-gap:0;row-gap:0;margin-bottom:32px;}
+  .feature-row{padding:12px 8px;gap:12px;}
+  .feature-text{font-size:13.5px;}
+  .feature-check{width:18px;height:18px;}
   .tier-badge{font-size:15px;padding:8px 14px;}
-  .pricing-header h2{font-size:clamp(36px,9vw,56px);}
+  .pricing-header h2{font-size:clamp(36px,9vw,52px);}
 
   /* About */
-  #about{padding:36px 16px;}
   .team-grid{grid-template-columns:1fr;}
-  .team-card{padding:20px 16px;}
+  .team-card{padding:24px 20px;}
 
-  /* Industries */
-  .industry-card{padding:28px 20px;}
+  /* Industries — single column */
+  .industries-grid{grid-template-columns:1fr;}
+  .industry-card{padding:32px 22px;}
 
   /* FAQ */
-  #faq{padding:36px 16px;}
-  .faq-q{font-size:15px;padding:18px 0;}
+  .faq-q{font-size:15px;padding:20px 0;}
 
   /* CTA */
-  #cta{padding:40px 16px;}
-  .cta-title{font-size:clamp(44px,11vw,72px);}
-  .cta-sub{font-size:15px;}
+  #cta{padding:56px 20px;}
+  .cta-title{font-size:clamp(44px,11vw,68px);}
+  .cta-sub{font-size:15px;line-height:1.7;}
   .cta-form{flex-direction:column;}
 
+  /* Restaurant/website cards */
+  #restaurant-sites{padding:56px 20px;}
+  .resto-card-inner{padding:28px 22px;}
+
   /* Footer statement */
-  .footer-statement{padding:36px 16px;}
+  .footer-statement{padding:48px 20px;}
   .footer-statement-word{font-size:clamp(48px,11vw,72px);}
   .footer-statement-cta{width:100%;text-align:center;justify-content:center;}
   .footer-statement-text{gap:12px;}
