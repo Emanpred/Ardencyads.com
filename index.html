@@ -14,6 +14,40 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ardency — Marketing That Moves</title>
+<meta name="description" content="Ardency is a senior-only marketing agency that engineers paid ads, SEO, content, and websites for ambitious brands. Transparent pricing, revenue-first thinking, no long-term lock-ins.">
+<meta name="keywords" content="marketing agency, performance marketing, paid ads, SEO, web design, growth marketing, brand strategy, Ardency">
+<meta name="author" content="Ardency">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ardencyads.com/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ardencyads.com/">
+<meta property="og:title" content="Ardency — Marketing That Moves">
+<meta property="og:description" content="Senior-only marketing agency engineering paid ads, SEO, content, and websites for ambitious brands. Transparent pricing, revenue-first thinking, no long-term lock-ins.">
+<meta property="og:image" content="https://ardencyads.com/logo.png">
+<meta property="og:site_name" content="Ardency">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://ardencyads.com/">
+<meta name="twitter:title" content="Ardency — Marketing That Moves">
+<meta name="twitter:description" content="Senior-only marketing agency engineering paid ads, SEO, content, and websites for ambitious brands.">
+<meta name="twitter:image" content="https://ardencyads.com/logo.png">
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ardency",
+  "url": "https://ardencyads.com/",
+  "logo": "https://ardencyads.com/logo.png",
+  "description": "Senior-only marketing agency engineering paid ads, SEO, content, and websites for ambitious brands.",
+  "sameAs": [
+    "https://www.linkedin.com/company/ardencyads",
+    "https://www.instagram.com/ardency.ads/",
+    "https://www.twitter.com/ardencyads"
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -55,16 +89,16 @@ body{background:var(--darkest);color:var(--light);font-family:'Archivo',sans-ser
 /* Shimmer particles behind logo */
 .page-intro-mark-wrap::after{content:'';position:absolute;inset:-60px;background-image:radial-gradient(1.5px 1.5px at 20% 30%,rgba(245,166,35,.7) 50%,transparent 100%),radial-gradient(1.5px 1.5px at 75% 15%,rgba(240,112,32,.6) 50%,transparent 100%),radial-gradient(1px 1px at 45% 80%,rgba(232,41,42,.5) 50%,transparent 100%),radial-gradient(1.5px 1.5px at 85% 65%,rgba(245,166,35,.6) 50%,transparent 100%),radial-gradient(1px 1px at 10% 70%,rgba(240,112,32,.5) 50%,transparent 100%),radial-gradient(1.5px 1.5px at 60% 50%,rgba(232,41,42,.6) 50%,transparent 100%),radial-gradient(1px 1px at 30% 10%,rgba(245,166,35,.5) 50%,transparent 100%),radial-gradient(1.5px 1.5px at 90% 40%,rgba(240,112,32,.7) 50%,transparent 100%);opacity:0;animation:introShimmer 3.5s .4s ease-in-out infinite;}
 @keyframes introShimmer{0%,100%{opacity:.3;transform:scale(1) rotate(0deg)}25%{opacity:.6;transform:scale(1.04) rotate(1deg)}50%{opacity:.4;transform:scale(.98) rotate(-1deg)}75%{opacity:.7;transform:scale(1.03) rotate(.5deg)}}
-.page-intro-mark{width:200px;height:200px;object-fit:contain;opacity:0;position:relative;z-index:1;animation:introMark .8s .2s cubic-bezier(.25,.1,.25,1) forwards;}
+.page-intro-mark{width:200px;height:200px;object-fit:contain;opacity:0;position:relative;z-index:1;animation:introMark .5s .1s cubic-bezier(.25,.1,.25,1) forwards;}
 @keyframes introMark{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
-.page-intro-name{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.35em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:0;animation:introName .6s .65s ease forwards;}
+.page-intro-name{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.35em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:0;animation:introName .4s .35s ease forwards;}
 @keyframes introName{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 /* Full-width bottom progress bar */
 .page-intro-bar{position:absolute;bottom:0;left:0;width:100%;height:3px;background:rgba(255,255,255,.04);overflow:hidden;opacity:0;animation:introBarIn .3s .5s ease forwards;}
-.page-intro-bar-fill{width:0;height:100%;background:linear-gradient(90deg,#F5A623,#F07020,#E8292A);box-shadow:0 0 16px rgba(240,112,32,.7),0 0 40px rgba(240,112,32,.3);animation:introBarFill 1.6s .7s cubic-bezier(.25,.46,.45,.94) forwards;}
+.page-intro-bar-fill{width:0;height:100%;background:linear-gradient(90deg,#F5A623,#F07020,#E8292A);box-shadow:0 0 16px rgba(240,112,32,.7),0 0 40px rgba(240,112,32,.3);animation:introBarFill .8s .4s cubic-bezier(.25,.46,.45,.94) forwards;}
 @keyframes introBarIn{to{opacity:1}}
 @keyframes introBarFill{to{width:100%}}
-.page-intro.exit{animation:introExit .7s 2.2s cubic-bezier(.22,1,.36,1) forwards;}
+.page-intro.exit{animation:introExit .4s 1.2s cubic-bezier(.22,1,.36,1) forwards;}
 @keyframes introExit{0%{opacity:1}100%{opacity:0}}
 
 /* ── NAV ── */
@@ -328,6 +362,18 @@ section{padding:120px 60px;}
 .budget-too-low.show{display:block;}
 .budget-too-low h3{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.06em;margin-bottom:12px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.3;}
 .budget-too-low p{font-size:15px;color:rgba(245,242,238,.2);line-height:1.7;}
+
+/* ── FEATURED CLIENTS ── */
+#clients{background:var(--darkest);padding:80px 60px;text-align:center;position:relative;overflow:hidden;}
+.clients-header{margin-bottom:40px;}
+.clients-header h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,40px);letter-spacing:.06em;color:rgba(245,242,238,.7);margin-bottom:8px;}
+.clients-header p{font-size:14px;color:rgba(245,242,238,.35);letter-spacing:.04em;}
+.clients-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px 56px;max-width:1100px;margin:0 auto;}
+.client-logo{display:flex;align-items:center;justify-content:center;height:80px;padding:8px 16px;opacity:.55;filter:grayscale(40%);transition:opacity .35s ease,filter .35s ease,transform .35s cubic-bezier(.22,1,.36,1);}
+.client-logo:hover{opacity:1;filter:grayscale(0%);transform:translateY(-3px);}
+.client-logo img{max-height:64px;max-width:160px;object-fit:contain;display:block;}
+@media(max-width:900px){#clients{padding:48px 24px;} .clients-row{gap:24px 32px;} .client-logo{height:64px;} .client-logo img{max-height:52px;max-width:130px;}}
+@media(max-width:480px){#clients{padding:40px 16px;} .clients-row{gap:20px 28px;} .client-logo{height:56px;} .client-logo img{max-height:44px;max-width:110px;}}
 
 /* ── WEBSITE SUBSCRIPTIONS ── */
 #restaurant-sites{background:var(--darkest);padding:120px 60px;position:relative;overflow:hidden;}
@@ -956,6 +1002,25 @@ section{padding:120px 60px;}
 
 <div class="section-divider"></div>
 
+<!-- FEATURED CLIENTS — to add a new client, copy one .client-logo block and update src + alt + href -->
+<section id="clients">
+  <div class="clients-header reveal">
+    <h3>Trusted by ambitious brands</h3>
+    <p>Just a few of the businesses we've helped grow.</p>
+  </div>
+  <div class="clients-row reveal reveal-delay-1">
+    <a class="client-logo" href="https://www.instagram.com/antojitos1rd/" target="_blank" rel="noopener" title="Antojitos RD">
+      <img src="antojitos-logo.png" alt="Antojitos RD">
+    </a>
+    <!-- Add more clients here. Template:
+    <a class="client-logo" href="CLIENT_URL" target="_blank" rel="noopener" title="CLIENT NAME">
+      <img src="CLIENT_LOGO_FILE.png" alt="CLIENT NAME">
+    </a>
+    -->
+  </div>
+</section>
+
+<div class="section-divider"></div>
 
 <!-- WEBSITE SUBSCRIPTIONS -->
 <section id="restaurant-sites">
@@ -1183,9 +1248,12 @@ section{padding:120px 60px;}
 </div>
 
 <script>
-// PAGE INTRO
+// PAGE INTRO — skip on repeat visits, faster on first
 var intro = document.getElementById('pageIntro');
-if(intro){intro.classList.add('exit');setTimeout(function(){intro.style.display='none';},3000);}
+if(intro){
+  if(sessionStorage.getItem('introSeen')){intro.style.display='none';}
+  else{sessionStorage.setItem('introSeen','1');intro.classList.add('exit');setTimeout(function(){intro.style.display='none';},1700);}
+}
 
 // SCROLL PROGRESS
 var pb = document.getElementById('scrollProgress');
