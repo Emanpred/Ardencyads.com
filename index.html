@@ -334,35 +334,44 @@ section{padding:120px 60px;}
 .resto-wrap{max-width:1200px;margin:0 auto;}
 .resto-header{text-align:center;margin-bottom:56px;}
 .resto-header p{margin-top:16px;color:rgba(245,242,238,.45);font-size:16px;line-height:1.7;max-width:520px;margin-left:auto;margin-right:auto;}
-.resto-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:start;}
-.resto-card{background:rgba(255,255,255,.025);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.06);border-radius:16px;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease;}
+.resto-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch;}
+.resto-card{background:rgba(255,255,255,.025);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.06);border-radius:16px;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease;display:flex;flex-direction:column;}
 .resto-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.3);}
 .resto-card.popular{border-color:rgba(240,112,32,.3);}
 .resto-card.popular::after{content:'';position:absolute;top:0;left:10%;right:10%;height:80px;background:radial-gradient(ellipse at 50% 0%,rgba(240,112,32,.08) 0%,transparent 70%);pointer-events:none;}
 .resto-popular-badge{position:absolute;top:16px;right:16px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:100px;background:rgba(240,112,32,.12);color:var(--fire-orange);border:1px solid rgba(240,112,32,.2);z-index:2;}
-.resto-exclusive{position:relative;margin:0 -28px 24px;padding:14px 28px;background:linear-gradient(90deg,rgba(232,41,42,.08),rgba(240,112,32,.06));border-top:1px solid rgba(232,41,42,.18);border-bottom:1px solid rgba(232,41,42,.18);}
-.resto-exclusive-label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;}
-.resto-exclusive-title{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ff7070;}
-.resto-exclusive-dot{width:6px;height:6px;border-radius:50%;background:#ff5050;animation:pulseDot 1.8s ease-in-out infinite;flex-shrink:0;}
-.resto-exclusive-count{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.06em;background:linear-gradient(135deg,#F5A623,#E8292A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.resto-exclusive-bar{height:3px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;margin-bottom:6px;}
-.resto-exclusive-bar-fill{height:100%;width:60%;background:linear-gradient(90deg,#F5A623,#F07020,#E8292A);border-radius:2px;box-shadow:0 0 8px rgba(240,112,32,.4);}
-.resto-exclusive-note{font-size:11px;color:rgba(245,242,238,.4);letter-spacing:.02em;}
-.resto-exclusive-note strong{color:rgba(245,242,238,.7);font-weight:500;}
-.resto-card-bar{height:3px;background:rgba(255,255,255,.03);position:relative;overflow:hidden;border-radius:16px 16px 0 0;}
+/* Exclusive Launch Offer — premium animated banner */
+.resto-card.exclusive{border-color:rgba(232,41,42,.4);box-shadow:0 0 0 1px rgba(232,41,42,.15),0 0 40px rgba(232,41,42,.08);}
+.resto-card.exclusive::before{content:'';position:absolute;inset:-1px;border-radius:17px;padding:1px;background:linear-gradient(135deg,#F5A623,#E8292A,#F5A623,#E8292A);background-size:300% 300%;animation:exclusiveBorder 4s linear infinite;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:2;}
+@keyframes exclusiveBorder{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+.resto-exclusive{position:relative;margin:-2px -28px 22px;padding:16px 28px 14px;background:linear-gradient(135deg,rgba(232,41,42,.18),rgba(240,112,32,.12) 50%,rgba(232,41,42,.18));border-top:1px solid rgba(232,41,42,.3);border-bottom:1px solid rgba(232,41,42,.3);overflow:hidden;}
+.resto-exclusive::before{content:'';position:absolute;top:0;left:-30%;width:30%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);animation:exclusiveSweep 3.5s 1s ease-in-out infinite;}
+@keyframes exclusiveSweep{0%{left:-30%}50%{left:100%}100%{left:100%}}
+.resto-exclusive-label{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;position:relative;}
+.resto-exclusive-title{display:flex;align-items:center;gap:8px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#fff;text-shadow:0 0 12px rgba(232,41,42,.5);}
+.resto-exclusive-fire{width:14px;height:14px;flex-shrink:0;animation:fireFlicker 1.2s ease-in-out infinite alternate;}
+@keyframes fireFlicker{0%{transform:scale(1) rotate(-2deg);filter:drop-shadow(0 0 4px rgba(240,112,32,.7))}100%{transform:scale(1.1) rotate(2deg);filter:drop-shadow(0 0 8px rgba(232,41,42,.9))}}
+.resto-exclusive-count{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.06em;background:linear-gradient(135deg,#F5A623,#E8292A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding:3px 10px;background-color:rgba(0,0,0,.25);background-clip:padding-box;border-radius:100px;border:1px solid rgba(232,41,42,.3);text-shadow:0 0 8px rgba(232,41,42,.4);}
+.resto-exclusive-bar{position:relative;height:5px;background:rgba(0,0,0,.35);border-radius:3px;overflow:hidden;margin-bottom:8px;border:1px solid rgba(232,41,42,.15);}
+.resto-exclusive-bar-fill{position:relative;height:100%;width:60%;background:linear-gradient(90deg,#F5A623,#F07020,#E8292A);border-radius:3px;box-shadow:0 0 12px rgba(240,112,32,.7),0 0 24px rgba(232,41,42,.4);}
+.resto-exclusive-bar-fill::after{content:'';position:absolute;top:0;right:-2px;width:8px;height:100%;background:#fff;border-radius:50%;filter:blur(4px);opacity:.8;animation:barPulse 1.5s ease-in-out infinite;}
+@keyframes barPulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+.resto-exclusive-note{font-size:11.5px;color:rgba(245,242,238,.55);letter-spacing:.02em;line-height:1.4;}
+.resto-exclusive-note strong{color:#ff7070;font-weight:600;}
+.resto-card-bar{height:3px;background:rgba(255,255,255,.03);position:relative;overflow:hidden;border-radius:16px 16px 0 0;flex-shrink:0;}
 .resto-card-bar-fill{position:absolute;inset:0;background:linear-gradient(90deg,#F5A623,#F07020,#E8292A);}
-.resto-card-inner{padding:36px 28px;}
+.resto-card-inner{padding:36px 28px;display:flex;flex-direction:column;flex:1;}
 .resto-plan-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.1em;color:var(--fire-orange);margin-bottom:8px;}
 .resto-price{display:flex;align-items:baseline;gap:3px;margin-bottom:28px;}
 .resto-price-amount{font-family:'Bebas Neue',sans-serif;font-size:44px;letter-spacing:.01em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .resto-price-mo{font-size:14px;color:rgba(245,242,238,.3);margin-left:2px;}
 .resto-includes{font-size:12px;color:rgba(245,242,238,.25);letter-spacing:.06em;margin-bottom:16px;font-style:italic;}
-.resto-features{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.resto-features{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;flex:1;}
 .resto-feature{display:flex;align-items:flex-start;gap:10px;}
 .resto-feature-check{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,rgba(245,166,35,.18),rgba(232,41,42,.18));display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
 .resto-feature-check svg{width:9px;height:9px;}
 .resto-feature-text{font-size:13.5px;color:rgba(245,242,238,.6);line-height:1.4;}
-.resto-cta{width:100%;height:50px;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--grad);border:none;border-radius:8px;color:#fff;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.1em;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;transition:box-shadow .35s ease,transform .2s ease;}
+.resto-cta{width:100%;height:50px;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--grad);border:none;border-radius:8px;color:#fff;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.1em;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;transition:box-shadow .35s ease,transform .2s ease;margin-top:auto;}
 .resto-cta::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:skewX(-20deg);transition:left .5s ease;}
 .resto-cta:hover{box-shadow:0 0 20px rgba(240,112,32,.4),0 0 50px rgba(240,112,32,.15);transform:translateY(-2px);}
 .resto-cta:hover::before{left:150%;}
@@ -1005,14 +1014,14 @@ section{padding:120px 60px;}
     </div>
     <div class="resto-grid">
       <!-- Starter -->
-      <div class="resto-card reveal">
+      <div class="resto-card exclusive reveal">
         <div class="resto-card-bar"><div class="resto-card-bar-fill"></div></div>
         <div class="resto-card-inner">
           <div class="resto-plan-name">Starter</div>
           <div class="resto-price"><span class="resto-price-amount">$50</span><span class="resto-price-mo">/mo</span></div>
           <div class="resto-exclusive">
             <div class="resto-exclusive-label">
-              <div class="resto-exclusive-title"><span class="resto-exclusive-dot"></span>Exclusive Launch Offer</div>
+              <div class="resto-exclusive-title"><svg class="resto-exclusive-fire" viewBox="0 0 14 14" fill="none"><path d="M7 1c2 2 3 3.5 3 6a3 3 0 11-6 0c0-1 .5-2 1-2.5 0 1 .5 1.5 1 1.5 0-1.5-.5-3.5 1-5z" fill="url(#fireGrad)"/><defs><linearGradient id="fireGrad" x1="0" y1="0" x2="0" y2="14"><stop stop-color="#F5A623"/><stop offset="1" stop-color="#E8292A"/></linearGradient></defs></svg>Exclusive Launch Offer</div>
               <div class="resto-exclusive-count">3/5</div>
             </div>
             <div class="resto-exclusive-bar"><div class="resto-exclusive-bar-fill"></div></div>
