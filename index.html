@@ -994,39 +994,6 @@ section{padding:120px 60px;}
 
 <div class="section-divider"></div>
 
-<!-- PRICING -->
-<section id="pricing">
-  <div class="pricing-header reveal">
-    <div class="section-label">Transparent Pricing</div>
-    <h2 class="section-title">What can we do<br>for your budget?</h2>
-    <p style="margin-top:16px;color:rgba(245,242,238,.5);font-size:16px;max-width:520px;line-height:1.7;">Drag the slider to your monthly budget and watch your plan build in real time. Every plan includes dedicated strategy, weekly reporting, and a 30-day guarantee.</p>
-  </div>
-  <div class="pricing-slider-wrap reveal">
-    <div class="budget-top-row">
-      <div><div class="budget-label-left">Set your monthly budget</div><p class="budget-hint">Drag the slider — your plan builds itself based on what you can invest.</p></div>
-      <div class="budget-display"><span class="budget-dollar">$</span><span class="budget-amount" id="budgetDisplay">2,500</span><span class="budget-mo">/mo</span></div>
-    </div>
-    <div class="slider-track-wrap"><div class="slider-fill" id="sliderFill"></div><input type="range" class="slider-range" id="budgetSlider" min="0" max="100" value="27" step="1"></div>
-    <div class="slider-ticks"><span class="slider-tick">$500</span><span class="slider-tick">$1,500</span><span class="slider-tick">$2,500</span><span class="slider-tick">$4,000</span><span class="slider-tick">$7,500</span></div>
-    <div class="tier-badge" id="tierBadge"><div class="tier-dot"></div><span id="tierName">Starter Plan</span></div>
-    <div class="pricing-card-single" id="pricingCard">
-      <div class="pricing-card-scan"></div>
-      <div class="pricing-card-particles" id="pricingParticles"></div>
-      <div class="pricing-card-top-bar"><div class="pricing-card-top-bar-fill" id="cardTopBar"></div></div>
-      <div class="budget-too-low" id="budgetTooLow"><h3>Budget Too Low</h3><p>We work with budgets starting at $500/month.<br>Slide up to see what we can build together.</p></div>
-      <div id="featuresWrap" class="pricing-card-inner">
-        <div class="features-grid" id="featuresGrid"></div>
-        <div class="pricing-card-footer">
-          <a href="#" id="pricingCta" onclick="openCal();return false;">GET STARTED AT THIS BUDGET <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="pricing-guarantee"><svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M9 2L3 4.5v4.75C3 12.8 5.6 16.1 9 17c3.4-.9 6-4.2 6-7.75V4.5L9 2z" stroke="rgba(245,242,238,.25)" stroke-width="1.2" fill="none"/><path d="M6 9l2 2 4-4" stroke="rgba(245,242,238,.25)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>30-day money-back guarantee</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
 <!-- WEBSITE SUBSCRIPTIONS -->
 <section id="restaurant-sites">
   <div class="resto-wrap">
@@ -1128,13 +1095,35 @@ section{padding:120px 60px;}
 
 <div class="section-divider"></div>
 
-<!-- CTA -->
-<section id="cta">
-  <div class="cta-label">Free strategy session</div>
-  <h2 class="cta-title reveal">Ready to grow?<br><span class="fire-text">Let's make it happen.</span></h2>
-  <p class="cta-sub reveal">Book a free 30-minute strategy call. We'll audit your current marketing, identify quick wins, and outline a custom growth plan — on us.</p>
-  <div class="cta-form reveal"><input type="email" class="cta-input" placeholder="Enter your work email..."><button class="cta-submit" onclick="openCal()">Get My Free Audit →</button></div>
-  <p class="cta-note reveal">No commitment. No credit card. Just strategy.</p>
+<!-- PRICING -->
+<section id="pricing">
+  <div class="pricing-header reveal">
+    <div class="section-label">Transparent Pricing</div>
+    <h2 class="section-title">What can we do<br>for your budget?</h2>
+    <p style="margin-top:16px;color:rgba(245,242,238,.5);font-size:16px;max-width:520px;line-height:1.7;">Drag the slider to your monthly budget and watch your plan build in real time. Every plan includes dedicated strategy, weekly reporting, and a 30-day guarantee.</p>
+  </div>
+  <div class="pricing-slider-wrap reveal">
+    <div class="budget-top-row">
+      <div><div class="budget-label-left">Set your monthly budget</div><p class="budget-hint">Drag the slider — your plan builds itself based on what you can invest.</p></div>
+      <div class="budget-display"><span class="budget-dollar">$</span><span class="budget-amount" id="budgetDisplay">2,500</span><span class="budget-mo">/mo</span></div>
+    </div>
+    <div class="slider-track-wrap"><div class="slider-fill" id="sliderFill"></div><input type="range" class="slider-range" id="budgetSlider" min="0" max="100" value="27" step="1"></div>
+    <div class="slider-ticks"><span class="slider-tick">$500</span><span class="slider-tick">$1,500</span><span class="slider-tick">$2,500</span><span class="slider-tick">$4,000</span><span class="slider-tick">$7,500</span></div>
+    <div class="tier-badge" id="tierBadge"><div class="tier-dot"></div><span id="tierName">Starter Plan</span></div>
+    <div class="pricing-card-single" id="pricingCard">
+      <div class="pricing-card-scan"></div>
+      <div class="pricing-card-particles" id="pricingParticles"></div>
+      <div class="pricing-card-top-bar"><div class="pricing-card-top-bar-fill" id="cardTopBar"></div></div>
+      <div class="budget-too-low" id="budgetTooLow"><h3>Budget Too Low</h3><p>We work with budgets starting at $500/month.<br>Slide up to see what we can build together.</p></div>
+      <div id="featuresWrap" class="pricing-card-inner">
+        <div class="features-grid" id="featuresGrid"></div>
+        <div class="pricing-card-footer">
+          <a href="#" id="pricingCta" onclick="openCal();return false;">GET STARTED AT THIS BUDGET <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="pricing-guarantee"><svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M9 2L3 4.5v4.75C3 12.8 5.6 16.1 9 17c3.4-.9 6-4.2 6-7.75V4.5L9 2z" stroke="rgba(245,242,238,.25)" stroke-width="1.2" fill="none"/><path d="M6 9l2 2 4-4" stroke="rgba(245,242,238,.25)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>30-day money-back guarantee</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ABOUT -->
@@ -1194,6 +1183,17 @@ section{padding:120px 60px;}
       </div>
     </div>
   </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-label">Free strategy session</div>
+  <h2 class="cta-title reveal">Ready to grow?<br><span class="fire-text">Let's make it happen.</span></h2>
+  <p class="cta-sub reveal">Book a free 30-minute strategy call. We'll audit your current marketing, identify quick wins, and outline a custom growth plan — on us.</p>
+  <div class="cta-form reveal"><input type="email" class="cta-input" placeholder="Enter your work email..."><button class="cta-submit" onclick="openCal()">Get My Free Audit →</button></div>
+  <p class="cta-note reveal">No commitment. No credit card. Just strategy.</p>
 </section>
 
 <!-- FOOTER STATEMENT -->
