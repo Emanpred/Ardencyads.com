@@ -128,12 +128,6 @@ nav.scrolled{height:58px;background:rgba(18,18,18,.96);box-shadow:0 1px 0 rgba(2
 .mobile-nav li a:hover{color:var(--light);}
 
 /* ── ANNOUNCE BAR ── */
-.announce-bar{background:var(--grad);display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 24px;font-size:13px;font-weight:500;position:relative;z-index:101;}
-.announce-bar strong{animation:textPulse 2.5s ease-in-out infinite;}
-@keyframes textPulse{0%,100%{opacity:1}50%{opacity:.6}}
-.announce-bar a{color:white;font-weight:700;text-decoration:underline;text-underline-offset:2px;}
-.announce-close{position:absolute;right:16px;background:none;border:none;color:white;font-size:18px;cursor:none;opacity:.7;line-height:1;padding:4px;}
-.announce-close:hover{opacity:1;}
 
 /* ── HERO ── */
 .hero{min-height:100svh;display:flex;align-items:center;position:relative;padding:120px 60px 80px;overflow:hidden;}
@@ -168,12 +162,6 @@ nav.scrolled{height:58px;background:rgba(18,18,18,.96);box-shadow:0 1px 0 rgba(2
 .scroll-line{width:40px;height:1px;background:var(--muted);transform-origin:left;animation:expand 1.5s 1.5s ease forwards;transform:scaleX(0);}
 
 /* ── MARQUEE ── */
-.marquee-section{border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:18px 0;background:rgba(255,255,255,.02);}
-.marquee-track{display:flex;gap:48px;width:max-content;animation:marquee 35s linear infinite;}
-.marquee-section:hover .marquee-track{animation-play-state:paused;}
-.marquee-item{display:flex;align-items:center;gap:16px;font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,242,238,.3);white-space:nowrap;transition:color .25s ease;}
-.marquee-item:hover{color:rgba(245,242,238,.7);}
-.marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--fire-orange);flex-shrink:0;}
 
 /* ── SECTION SHARED ── */
 section{padding:120px 60px;}
@@ -267,15 +255,6 @@ section{padding:120px 60px;}
 .author-role{font-size:13px;color:var(--muted);margin-top:2px;}
 
 /* ── STATS BAND ── */
-.stats-band{background:var(--darkest);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);padding:64px 60px;position:relative;overflow:hidden;}
-.stats-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 100% at 50% 50%,rgba(240,112,32,.04) 0%,transparent 70%);pointer-events:none;}
-.stats-band-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:center;}
-.stats-band-item{text-align:center;padding:0 24px;transition:transform .4s cubic-bezier(.22,1,.36,1);cursor:default;}
-.stats-band-item:hover{transform:translateY(-4px);}
-.stats-band-item:hover .stats-band-num{filter:drop-shadow(0 0 16px rgba(240,112,32,.5));}
-.stats-band-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,6vw,80px);line-height:1;letter-spacing:.02em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;font-variant-numeric:tabular-nums;font-feature-settings:"tnum";display:inline-block;will-change:contents;}
-.stats-band-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,242,238,.35);font-weight:500;}
-.stats-band-divider{width:1px;height:60px;background:rgba(255,255,255,.07);}
 
 /* ── PRICING ── */
 /* ── PRICING — PREMIUM ── */
@@ -469,14 +448,6 @@ section{padding:120px 60px;}
 
 /* ── INDUSTRIES ── */
 #industries{background:var(--darker);}
-.industries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
-.industry-card{background:var(--darkest);padding:44px 36px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.04);transition:background .35s,transform .35s cubic-bezier(.22,1,.36,1),border-color .35s,box-shadow .35s;}
-.industry-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--grad);transition:width .4s cubic-bezier(.22,1,.36,1);}
-.industry-card:hover{background:rgba(240,112,32,.03);transform:translateY(-4px);border-color:rgba(240,112,32,.12);box-shadow:0 20px 40px rgba(0,0,0,.25);}
-.industry-card:hover::after{width:100%;}
-.industry-icon{font-size:36px;margin-bottom:20px;display:block;}
-.industry-card h3{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.06em;margin-bottom:12px;}
-.industry-card p{font-size:14px;line-height:1.7;color:rgba(245,242,238,.45);}
 
 /* ── FAQ ── */
 #faq{padding:120px 60px;background:var(--darkest);}
@@ -493,14 +464,6 @@ section{padding:120px 60px;}
 .faq-a p{font-size:15px;line-height:1.75;color:rgba(245,242,238,.5);}
 
 /* ── FOOTER STATEMENT ── */
-.footer-statement{background:var(--darkest);border-top:1px solid rgba(255,255,255,.05);padding:80px 60px;position:relative;overflow:hidden;}
-.footer-statement::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 50% 50%,rgba(240,112,32,.06) 0%,transparent 70%);pointer-events:none;}
-.growth-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.9;mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.5) 8%,black 18%,black 78%,rgba(0,0,0,.3) 92%,transparent 100%),linear-gradient(to bottom,transparent 0%,black 20%,black 70%,transparent 100%);mask-composite:intersect;-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.5) 8%,black 18%,black 78%,rgba(0,0,0,.3) 92%,transparent 100%),linear-gradient(to bottom,transparent 0%,black 20%,black 70%,transparent 100%);-webkit-mask-composite:destination-in;}
-.footer-statement-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;z-index:1;}
-.footer-statement-text{display:flex;align-items:baseline;gap:24px;flex-wrap:wrap;}
-.footer-statement-word{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,10vw,120px);line-height:.9;letter-spacing:.04em;color:rgba(245,242,238,.85);}
-.footer-statement-word.fire-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.footer-statement-cta{flex-shrink:0;font-size:16px;padding:18px 36px;}
 
 /* ── FOOTER MAIN ── */
 .footer-main{
@@ -601,7 +564,6 @@ section{padding:120px 60px;}
 /* ── KEYFRAMES ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeLeft{from{opacity:0;transform:translateX(36px)}to{opacity:1;transform:translateX(0)}}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes expand{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-20px,20px) scale(.95)}}
 
@@ -610,7 +572,6 @@ section{padding:120px 60px;}
   nav{padding:0 20px;height:60px;}
   .nav-links{display:none;}
   .hamburger{display:flex;}
-  .marquee-section{display:none;}
   .footer-top .footer-col:nth-child(2),.footer-top .footer-col:nth-child(3){display:none;}
   .hero{padding:100px 24px 60px;}
   .hero-stats,.hero-scroll{display:none;}
@@ -620,7 +581,6 @@ section{padding:120px 60px;}
   #process,#about,#faq{padding:64px 24px;}#pricing{padding:64px 24px 100px;}
   .services-header,.results-header{flex-direction:column;align-items:flex-start;gap:16px;}
   .services-grid{grid-template-columns:1fr 1fr;gap:2px;}
-  .industries-grid{grid-template-columns:1fr 1fr;}
   .process-split,.about-inner,.faq-inner{grid-template-columns:1fr;gap:40px;}
   .case-studies{grid-template-columns:1fr;}
   .case-metric{font-size:56px!important;}
@@ -634,8 +594,6 @@ section{padding:120px 60px;}
   .pricing-card-inner{padding:20px;}
   .budget-amount{font-size:52px;}
   .budget-top-row{flex-direction:column;gap:16px;}
-  .footer-statement{padding:40px 24px;}
-  .footer-statement-inner{flex-direction:column;align-items:flex-start;gap:32px;}
   .footer-main{padding:40px 24px 32px;}
   .footer-top{grid-template-columns:1fr;gap:36px;}
   .modal{padding:32px 24px;margin:16px;width:calc(100% - 32px);max-width:none;}
@@ -646,14 +604,10 @@ section{padding:120px 60px;}
   .resto-price-amount{font-size:40px;}
   #cta{padding:60px 24px;}
   .cta-form{flex-direction:column;}
-  .stats-band{padding:40px 24px;}
-  .stats-band-inner{grid-template-columns:1fr 1fr;gap:32px;}
-  .stats-band-divider{display:none;}
   .team-grid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:480px){
   /* Announce bar */
-  .announce-bar{font-size:11px;gap:6px;padding:8px 40px 8px 12px;flex-wrap:wrap;justify-content:center;}
 
   /* Hero */
   .hero{padding:96px 20px 60px;}
@@ -689,10 +643,6 @@ section{padding:120px 60px;}
   .case-metric{font-size:48px!important;}
 
   /* Stats band */
-  .stats-band{padding:48px 20px;}
-  .stats-band-inner{grid-template-columns:1fr 1fr;gap:28px 20px;}
-  .stats-band-num{font-size:44px;}
-  .stats-band-label{font-size:11px;}
 
   /* Pricing */
   .budget-amount{font-size:52px;}
@@ -710,8 +660,6 @@ section{padding:120px 60px;}
   .team-card{padding:24px 20px;}
 
   /* Industries — single column */
-  .industries-grid{grid-template-columns:1fr;}
-  .industry-card{padding:32px 22px;}
 
   /* FAQ */
   .faq-q{font-size:15px;padding:20px 0;}
@@ -727,10 +675,6 @@ section{padding:120px 60px;}
   .resto-card-inner{padding:28px 22px;}
 
   /* Footer statement */
-  .footer-statement{padding:48px 20px;}
-  .footer-statement-word{font-size:clamp(48px,11vw,72px);}
-  .footer-statement-cta{width:100%;text-align:center;justify-content:center;}
-  .footer-statement-text{gap:12px;}
 
   /* Footer main */
   .footer-main{padding:36px 16px 28px;}
@@ -759,25 +703,12 @@ section{padding:120px 60px;}
   .hero-h1{font-size:clamp(56px,15vw,72px);}
   .section-title{font-size:clamp(34px,10vw,48px);}
   .budget-amount{font-size:46px;}
-  .footer-statement-word{font-size:clamp(40px,12vw,56px);}
-  .stats-band-num{font-size:38px;}
   .nav-cta{font-size:12px!important;padding:8px 16px;}
   .pacc-title{font-size:16px;}
   .case-metric{font-size:42px!important;}
 }
 
 /* ── EXIT INTENT POPUP ── */
-.exit-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:10000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s ease;}
-.exit-popup-overlay.active{opacity:1;pointer-events:all;}
-.exit-popup{position:relative;max-width:480px;width:90%;padding:52px 44px;background:rgba(255,255,255,.04);backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);border:1px solid rgba(255,255,255,.08);border-radius:20px;box-shadow:0 8px 60px rgba(0,0,0,.5),0 0 80px rgba(240,112,32,.06);text-align:center;transform:translateY(24px) scale(.96);opacity:0;transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease;}
-.exit-popup-overlay.active .exit-popup{transform:translateY(0) scale(1);opacity:1;}
-.exit-popup-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(245,242,238,.5);font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s,border-color .2s;}
-.exit-popup-close:hover{background:rgba(255,255,255,.08);color:var(--light);border-color:rgba(255,255,255,.15);}
-.exit-popup h3{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.06em;line-height:1.1;margin-bottom:14px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.exit-popup p{font-size:16px;line-height:1.65;color:rgba(245,242,238,.55);margin-bottom:36px;}
-.exit-popup-cta{display:block;width:100%;height:60px;border:none;border-radius:10px;background:linear-gradient(135deg,#F5A623,#F07020,#E8292A);color:#fff;font-size:17px;font-weight:600;letter-spacing:.03em;cursor:pointer;transition:box-shadow .3s ease,transform .15s ease;}
-.exit-popup-cta:hover{box-shadow:0 0 24px rgba(240,112,32,.5),0 0 60px rgba(240,112,32,.2);transform:translateY(-2px);}
-.exit-popup-cta:active{transform:translateY(0);}
 </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
@@ -842,12 +773,6 @@ section{padding:120px 60px;}
   </div>
 </div>
 
-<!-- ANNOUNCE BAR -->
-<div class="announce-bar" id="announceBar">
-  <span>🔥 Limited spots — we're onboarding <strong>3 new clients</strong> this month.</span>
-  <a href="#" onclick="openCal();return false;">Claim your spot →</a>
-  <button class="announce-close" onclick="document.getElementById('announceBar').style.display='none'">×</button>
-</div>
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
@@ -1214,20 +1139,6 @@ section{padding:120px 60px;}
   <p class="cta-note reveal">No commitment. No credit card. Just strategy.</p>
 </section>
 
-<!-- FOOTER STATEMENT -->
-<div class="footer-statement">
-  <canvas class="growth-canvas" id="growthCanvas"></canvas>
-  <div class="footer-statement-inner">
-    <div class="footer-statement-text reveal">
-      <span class="footer-statement-word">GROW</span>
-      <span class="footer-statement-word fire-text">FASTER.</span>
-    </div>
-    <a href="#" class="btn-primary footer-statement-cta reveal reveal-delay-1" onclick="openCal();return false;">
-      Start Today
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
-</div>
 
 <!-- FOOTER -->
 <div class="footer-main">
@@ -1362,45 +1273,6 @@ function scramble(el){
 var scrObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){scramble(e.target);scrObs.unobserve(e.target);}});},{threshold:.5});
 document.querySelectorAll('.scramble-title').forEach(function(el){scrObs.observe(el);});
 
-// STATS BAND COUNTERS
-function animCount(el,target,pre,suf,isFloat,dur){
-  var start=null;
-  function step(now){
-    if(!start)start=now;
-    var p=Math.min((now-start)/dur,1),ease=1-Math.pow(1-p,3),val=isFloat?(target*ease).toFixed(1):Math.floor(target*ease);
-    el.textContent=(pre||'')+val+(suf||'');
-    if(p<1)requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-// Pre-lock each counter's width to its final rendered size so the digit count change doesn't cause horizontal layout shift while animating
-function lockCounterWidths(){
-  document.querySelectorAll('.stats-band-num[data-target]').forEach(function(el){
-    var target=parseFloat(el.dataset.target),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'',isFloat=el.dataset.float==='true';
-    var finalText=pre+(isFloat?target.toFixed(1):target)+suf;
-    var orig=el.textContent;
-    el.textContent=finalText;
-    var w=el.getBoundingClientRect().width;
-    el.style.minWidth=Math.ceil(w)+'px';
-    el.textContent=orig;
-  });
-}
-if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',lockCounterWidths);}else{lockCounterWidths();}
-window.addEventListener('resize',lockCounterWidths,{passive:true});
-function runBandCounters(){
-  var nums=document.querySelectorAll('.stats-band-num[data-target]');
-  nums.forEach(function(el){
-    if(el.dataset.counted)return;
-    el.dataset.counted='1';
-    animCount(el,parseFloat(el.dataset.target),el.dataset.prefix||'',el.dataset.suffix||'',el.dataset.float==='true',1600);
-  });
-}
-var bandObs=new IntersectionObserver(function(entries){entries.forEach(function(e){
-  if(!e.isIntersecting)return;
-  runBandCounters();
-  bandObs.unobserve(e.target);
-});},{threshold:.2});
-var sb=document.querySelector('.stats-band');if(sb)bandObs.observe(sb);
 
 // ACCORDION
 function togglePacc(item){var open=item.classList.contains('open');document.querySelectorAll('.pacc-item').forEach(function(i){i.classList.remove('open');});if(!open)item.classList.add('open');}
@@ -1529,81 +1401,6 @@ function updateSlider(animate){
 slider.addEventListener('input',function(){updateSlider(true);});
 updateSlider(false);setTimeout(function(){renderFeatures(sliderToBudget(parseInt(slider.value)));},300);
 
-// GROWTH CHART — infinite scrolling with edge fades
-(function(){
-  var canvas=document.getElementById('growthCanvas');if(!canvas)return;
-  var ctx=canvas.getContext('2d'),W,H,offset=0,rafId=null;
-  var BASE=[0.15,0.18,0.16,0.20,0.19,0.23,0.21,0.26,0.24,0.28,0.27,0.32,0.30,0.35,0.33,0.38,0.36,0.41,0.39,0.44,0.42,0.47,0.45,0.50,0.48,0.53,0.51,0.57,0.54,0.60,0.58,0.63,0.61,0.66,0.64,0.69,0.67,0.72,0.70,0.75,0.73,0.78,0.76,0.81,0.79,0.84,0.82,0.87,0.85,0.89,0.87,0.91,0.89,0.93,0.91,0.95,0.93,0.97,0.95,0.98,0.96,0.99,0.97,1.00,0.98,0.99,0.97,0.98,0.96,0.97];
-  var SEG_W=40;
-  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;}
-  resize();window.addEventListener('resize',resize,{passive:true});
-  function getY(v){var tp=H*.15,bp=H*.1;return H-bp-(v*(H-tp-bp));}
-  function getVal(xi){
-    // Use modulo to tile, but clamp so it never wraps back to start abruptly
-    var len=BASE.length;
-    var i=((xi%len)+len)%len;
-    var lo=BASE[Math.floor(i)],hi=BASE[Math.ceil(i)%len];
-    return lo+(hi-lo)*(i-Math.floor(i));
-  }
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    var num=Math.ceil(W/SEG_W)+3,si=offset/SEG_W;
-    ctx.beginPath();
-    for(var i=0;i<=num;i++){var x=i*SEG_W-(offset%SEG_W),y=getY(getVal(si+i));i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}
-    var lg=ctx.createLinearGradient(0,0,W,0);
-    lg.addColorStop(0,'rgba(245,166,35,0.1)');lg.addColorStop(0.2,'rgba(245,166,35,0.8)');lg.addColorStop(0.65,'rgba(240,112,32,0.95)');lg.addColorStop(1,'rgba(232,41,42,0.4)');
-    ctx.strokeStyle=lg;ctx.lineWidth=2.5;ctx.lineJoin='round';ctx.lineCap='round';ctx.stroke();
-    ctx.lineTo(num*SEG_W-(offset%SEG_W),H);ctx.lineTo(0,H);ctx.closePath();
-    var fg=ctx.createLinearGradient(0,0,0,H);
-    fg.addColorStop(0,'rgba(240,112,32,0.22)');fg.addColorStop(0.45,'rgba(240,112,32,0.08)');fg.addColorStop(1,'rgba(240,112,32,0)');
-    ctx.fillStyle=fg;ctx.fill();
-    ctx.save();ctx.setLineDash([5,12]);ctx.lineWidth=1;
-    [0.3,0.6,0.85].forEach(function(v){var y=getY(v);ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.strokeStyle='rgba(255,255,255,0.04)';ctx.stroke();});
-    ctx.setLineDash([]);ctx.restore();
-    var dotX=(num-1)*SEG_W-(offset%SEG_W),dotY=getY(getVal(si+num-1)),pulse=0.5+0.5*Math.sin(Date.now()/400),ro=10+pulse*7;
-    var gg=ctx.createRadialGradient(dotX,dotY,0,dotX,dotY,ro);
-    gg.addColorStop(0,'rgba(240,112,32,'+(0.5+pulse*0.2)+')');gg.addColorStop(1,'rgba(240,112,32,0)');
-    ctx.beginPath();ctx.arc(dotX,dotY,ro,0,Math.PI*2);ctx.fillStyle=gg;ctx.fill();
-    ctx.beginPath();ctx.arc(dotX,dotY,4,0,Math.PI*2);ctx.fillStyle='#F5A623';ctx.fill();
-    ctx.beginPath();ctx.arc(dotX,dotY,1.8,0,Math.PI*2);ctx.fillStyle='white';ctx.fill();
-  }
-  function animate(){offset+=0.3;draw();rafId=requestAnimationFrame(animate);}
-  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){if(!rafId)rafId=requestAnimationFrame(animate);}else{if(rafId){cancelAnimationFrame(rafId);rafId=null;}}});},{threshold:0.1});
-  obs.observe(canvas.parentElement);
-})();
-</script>
-<!-- EXIT INTENT POPUP -->
-<div class="exit-popup-overlay" id="exitPopup">
-  <div class="exit-popup">
-    <button class="exit-popup-close" id="exitPopupClose">&times;</button>
-    <h3>Wait — Before You Go!</h3>
-    <p>Get a free 30-minute strategy audit, no strings attached.</p>
-    <button class="exit-popup-cta" id="exitPopupCta">Claim My Free Audit &rarr;</button>
-  </div>
-</div>
-<script>
-(function(){
-  var shown=false;
-  function showExitPopup(){
-    if(shown||sessionStorage.getItem('exitPopupShown'))return;
-    shown=true;
-    sessionStorage.setItem('exitPopupShown','1');
-    document.getElementById('exitPopup').classList.add('active');
-  }
-  document.addEventListener('mouseout',function(e){
-    if(!e.relatedTarget&&e.clientY<5)showExitPopup();
-  });
-  document.getElementById('exitPopupClose').addEventListener('click',function(){
-    document.getElementById('exitPopup').classList.remove('active');
-  });
-  document.getElementById('exitPopup').addEventListener('click',function(e){
-    if(e.target===this)this.classList.remove('active');
-  });
-  document.getElementById('exitPopupCta').addEventListener('click',function(){
-    document.getElementById('exitPopup').classList.remove('active');
-    openCal();
-  });
-})();
 </script>
 
 <script>
